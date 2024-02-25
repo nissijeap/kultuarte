@@ -57,7 +57,7 @@
       <div class="footer-legal text-center position-relative">
       <div class="container">
         <div class="copyright">
-          &copy; Copyright <strong><span>KultuArte</span></strong>. All Rights Reserved
+          &copy; <strong><span>KultuArte</span></strong>. All Rights Reserved
         </div>
       </div>
 
