@@ -16,13 +16,111 @@
         <a href="#about" class="btn-get-started">Explore Now!</a>
         <a href="" class="btn-get-signin">Sign In</a>
       </div>
-      
+
     </div>
 </section>
 <!-- End Hero Section -->
 
 <main id="main">
-    
+    <!-- ======= About Section ======= -->
+    <section id="event">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-header">
+                <h2>Major Events</h2>
+                <p>Embrace the Vibrant Spirit of <span>Iligan</span></p>
+            </div>
+
+            <div class="row">
+                <div class="col-12" data-bs-ride="carousel" data-bs-interval="5000">
+                    <div class="swiper sliderFeaturedPosts">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="" class="img-bg d-flex align-items-end" style="background-image: url('guest/assets/img/events/major-event-1.jpg');">
+                                    <div class="img-bg-inner">
+                                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                            Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, 
+                                            officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem 
+                                            necessitatibus rem atque.
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="" class="img-bg d-flex align-items-end" style="background-image: url('guest/assets/img/events/major-event-3.webp');">
+                                    <div class="img-bg-inner">
+                                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                            Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, 
+                                            officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem 
+                                            necessitatibus rem atque.
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="" class="img-bg d-flex align-items-end" style="background-image: url('guest/assets/img/events/major-event-7.jpg');">
+                                    <div class="img-bg-inner">
+                                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                            Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, 
+                                            officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem 
+                                            necessitatibus rem atque.
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="" class="img-bg d-flex align-items-end" style="background-image: url('guest/assets/img/events/major-event-6.jpg');">
+                                    <div class="img-bg-inner">
+                                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                            Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, 
+                                            officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem 
+                                            necessitatibus rem atque.
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="" class="img-bg d-flex align-items-end" style="background-image: url('guest/assets/img/events/major-event-4.jpg');">
+                                    <div class="img-bg-inner">
+                                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                            Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, 
+                                            officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem 
+                                            necessitatibus rem atque.
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="custom-swiper-button-next">
+                            <span class="bi-chevron-right"></span>
+                        </div>
+                        <div class="custom-swiper-button-prev">
+                            <span class="bi-chevron-left"></span>
+                        </div>
+
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End About Section -->
 </main>
 
 @endsection
