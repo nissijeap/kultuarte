@@ -23,7 +23,7 @@ use App\Http\Controllers\CommentController;
 */
 
 Route::get('/', function () {
-    return view('guest.welcome');
+    return view('welcome');
 });
 
 Auth::routes();
