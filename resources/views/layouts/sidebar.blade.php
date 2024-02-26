@@ -22,7 +22,10 @@
                             <li><a href="default-live-stream.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">palette</span></a></li>
                             <li><a href="default-live-stream.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">newsmode</span></a></li>
                             <li><a href="default-live-stream.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">settings</span></a></li>
-                            <li><a href="default-live-stream.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">power_settings_new</span></a></li>
+                            <li><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">power_settings_new</span></a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                </form></li>
                             <li class="logo d-none d-xl-block d-lg-block"></li>
                         </ul>
                 </div>

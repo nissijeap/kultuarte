@@ -25,9 +25,9 @@ class RoleController extends Controller
      */
     public function index(): View
     {
-        return view('roles.index', [
-            'roles' => Role::orderBy('id','DESC')->paginate(3)
-        ]);
+        $roles = Role::all();
+
+        return view('roles.index', compact('roles'));
     }
 
     /**
@@ -45,30 +45,39 @@ class RoleController extends Controller
      */
     public function store(StoreRoleRequest $request): RedirectResponse
     {
+        try {
         $role = Role::create(['name' => $request->name]);
 
         $permissions = Permission::whereIn('id', $request->permissions)->get(['name'])->toArray();
         
         $role->syncPermissions($permissions);
 
-        return redirect()->route('roles.index')
-                ->withSuccess('New role is added successfully.');
+        
+            return redirect()->route('roles.index')->with('success', 'New role added successfully.');
+        } catch (\Exception $e) {
+            // If an exception occurs, redirect back with error message
+            return redirect()->back()->withInput()->with('error', 'Failed to store permissions: ' . $e->getMessage());
+        }
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Role $role): View
+    public function show($id): View
     {
+        $role = Role::findOrFail($id);
+
         $rolePermissions = Permission::join("role_has_permissions","permission_id","=","id")
-            ->where("role_id",$role->id)
+            ->where("role_id", $role->id)
             ->select('name')
             ->get();
+            
         return view('roles.show', [
             'role' => $role,
             'rolePermissions' => $rolePermissions
         ]);
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -95,6 +104,7 @@ class RoleController extends Controller
      */
     public function update(UpdateRoleRequest $request, Role $role): RedirectResponse
     {
+        try {
         $input = $request->only('name');
 
         $role->update($input);
@@ -103,8 +113,11 @@ class RoleController extends Controller
 
         $role->syncPermissions($permissions);    
         
-        return redirect()->back()
-                ->withSuccess('Role is updated successfully.');
+            return redirect()->route('roles.index')->with('success', 'Role updated successfully.');
+        } catch (\Exception $e) {
+            // If an exception occurs, redirect back with error message using toastr
+            return redirect()->back()->withInput()->with('error', 'ops! Something went wrong.')->with('toastr', 'error');
+        }
     }
 
     /**
@@ -119,6 +132,7 @@ class RoleController extends Controller
             abort(403, 'CAN NOT DELETE SELF ASSIGNED ROLE');
         }
         $role->delete();
+
         return redirect()->route('roles.index')
                 ->withSuccess('Role is deleted successfully.');
     }

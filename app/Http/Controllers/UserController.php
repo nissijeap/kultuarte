@@ -29,9 +29,9 @@ class UserController extends Controller
      */
     public function index(): View
     {
-        return view('users.index', [
-            'users' => User::latest('id')->paginate(3)
-        ]);
+        $users = User::all();
+        
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -49,14 +49,28 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request): RedirectResponse
     {
-        $input = $request->all();
-        $input['password'] = Hash::make($request->password);
+        try {
+            $input = $request->all();
+            $input['password'] = Hash::make($request->password);
 
-        $user = User::create($input);
-        $user->assignRole($request->roles);
+            $user = User::create($input);
+            $user->assignRole($request->roles);
 
-        return redirect()->route('users.index')
-                ->withSuccess('New user is added successfully.');
+             // Store user photo
+            if ($request->hasFile('photo')) {
+                $photo = $request->file('photo');
+                $photoName = 'photo_' . time() . '.' . $photo->getClientOriginalExtension();
+                $photo->move(public_path('images/photos/'), $photoName);
+                $user->photo = $photoName;
+                $user->save();
+            }
+
+        // Redirect to the permissions index page with success message
+            return redirect()->route('users.index')->with('success', 'New user added successfully.');
+        } catch (\Exception $e) {
+            // If an exception occurs, redirect back with error message
+            return redirect()->back()->withInput()->with('error', 'Failed to store user: ' . $e->getMessage());
+        }
     }
 
     /**
@@ -93,21 +107,43 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user): RedirectResponse
     {
-        $input = $request->all();
- 
-        if(!empty($request->password)){
-            $input['password'] = Hash::make($request->password);
-        }else{
-            $input = $request->except('password');
+        try {
+            $input = $request->except('password'); // Exclude password from input
+            
+            // Check if a new photo is uploaded
+            if ($request->hasFile('photo')) {
+                // Delete old photo if it exists
+                if ($user->photo) {
+                    $oldPhotoPath = public_path('images/photos/') . $user->photo;
+                    if (file_exists($oldPhotoPath)) {
+                        unlink($oldPhotoPath);
+                    }
+                }
+                
+                // Upload new photo
+                $photo = $request->file('photo');
+                $photoName = 'photo_' . time() . '.' . $photo->getClientOriginalExtension();
+                $photo->move(public_path('images/photos/'), $photoName);
+                $input['photo'] = $photoName; // Update input with new photo name
+            }
+            
+            // Update user details
+            if (!empty($request->password)) {
+                $input['password'] = Hash::make($request->password);
+            }
+            $user->update($input);
+
+            // Sync user roles
+            $user->syncRoles($request->roles);
+
+            // Redirect to the users index page with success message
+            return redirect()->route('users.index')->with('success', 'User updated successfully.');
+        } catch (\Exception $e) {
+            // If an exception occurs, redirect back with error message
+            return redirect()->back()->withInput()->with('error', 'Oops! Something went wrong.');
         }
-        
-        $user->update($input);
-
-        $user->syncRoles($request->roles);
-
-        return redirect()->back()
-                ->withSuccess('User is updated successfully.');
     }
+
 
     /**
      * Remove the specified resource from storage.
