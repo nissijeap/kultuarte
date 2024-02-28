@@ -9,6 +9,9 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\EmailController; 
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +25,7 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('guest.welcome');
 });
 
 Auth::routes();
@@ -35,13 +38,11 @@ Route::resources([
     'products' => ProductController::class,
 ]);
 
-Route::get('postCreate', [PostController::class, 'postCreate'])->name('postCreate');
-Route::post('/store', [PostController::class, 'store'])->name('store');
-
 //email verification
 Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::get('dashboard', [SuperadminController::class, 'dashboard'])->name('superadmin.dashboard');
+Route::get('gallery', [SuperadminController::class, 'gallery'])->name('superadmin.gallery');
 
 Route::get('permissions', [PermissionController::class, 'index'])->name('permissions.index');
 Route::get('/permissions/create', [PermissionController::class, 'create'])->name('permissions.create');
@@ -68,6 +69,37 @@ Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.de
 Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
 Route::resource('users', UserController::class);
 
+Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
+Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+Route::get('/categories/{id}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
+Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('categories.update');
+Route::resource('categories', CategoryController::class);
 
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+Route::get('/posts/{id}/edit', [PostController::class, 'edit'])->name('posts.edit');
+Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
+Route::put('/posts/{id}', [PostController::class, 'update'])->name('posts.update');
+Route::resource('posts', PostController::class);
+
+Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
+Route::get('/blogs/create', [BlogController::class, 'create'])->name('blogs.create');
+Route::post('/blogs', [BlogController::class, 'store'])->name('blogs.store');
+Route::get('/blogs/{id}/edit', [BlogController::class, 'edit'])->name('blogs.edit');
+Route::get('/blogs/{id}/show', [BlogController::class, 'show'])->name('blogs.show');
+Route::delete('/blogs/{id}', [BlogController::class, 'destroy'])->name('blogs.destroy');
+Route::put('/blogs/{id}', [BlogController::class, 'update'])->name('blogs.update');
+// Route::resource('blogs', BlogController::class);
+
+Route::get('/emails', [EmailController::class, 'index'])->name('emails.index');
+Route::get('/emails/create', [EmailController::class, 'create'])->name('emails.create');
+Route::post('/emails', [EmailController::class, 'store'])->name('emails.store');
+Route::get('/emails/{id}/edit', [EmailController::class, 'edit'])->name('emails.edit');
+Route::get('/emails/{id}/show', [EmailController::class, 'show'])->name('emails.show');
+Route::delete('/emails/{id}', [EmailController::class, 'destroy'])->name('emails.destroy');
+Route::put('/emails/{id}', [EmailController::class, 'update'])->name('emails.update');
 
 });

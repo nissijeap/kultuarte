@@ -6,6 +6,7 @@ use App\Http\Requests\StoreRoleRequest;
 use App\Http\Requests\UpdateRoleRequest;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use App\Models\Media; 
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -26,7 +27,14 @@ class SuperadminController extends Controller
     {
         return view('superadmin.dashboard');
     }
-    
+
+    public function gallery()
+    {
+        $medias = Media::all();
+
+        return view('superadmin.gallery', compact('medias'));
+    }
+        
     /**
      * Show the form for creating a new resource.
      */

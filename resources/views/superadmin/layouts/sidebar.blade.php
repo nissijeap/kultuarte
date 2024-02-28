@@ -51,6 +51,8 @@
             @endcanany    
           </li>
 
+          <br>
+
           <li class="nav-item">
           @canany(['create-permission', 'edit-permission', 'delete-permission'])
             <a class="nav-link" href="{{ route('permissions.index') }}">
@@ -77,6 +79,79 @@
             </a>
             @endcanany
           </li>
+
+          <br>
+
+          <li class="nav-item">
+          @canany(['create-category', 'edit-category', 'delete-category'])
+            <a class="nav-link" href="{{ route('categories.index') }}">
+              <i class="fa fa-th-large menu-icon"></i>
+              <span class="menu-title">Categories</span> 
+            </a>
+            @endcanany
+          </li>
+
+          <li class="nav-item">
+          @canany(['view-gallery'])
+            <a class="nav-link" href="{{ route('superadmin.gallery') }}">
+              <i class="fa fa-file-image menu-icon"></i>
+              <span class="menu-title">Gallery</span> 
+            </a>
+            @endcanany
+          </li>
+
+          <br>
+          
+          <li class="nav-item">
+          @canany(['create-post', 'edit-post', 'delete-post'])
+            <a class="nav-link" href="{{ route('posts.index') }}">
+              <i class="fa fa-paint-brush menu-icon"></i>
+              <span class="menu-title">Arts</span> 
+            </a>
+            @endcanany
+          </li>
+
+          
+          <li class="nav-item">
+          @canany(['create-blog', 'edit-blog', 'delete-blog'])
+            <a class="nav-link" href="{{ route('blogs.index') }}">
+              <i class="fa fa-globe menu-icon"></i>
+              <span class="menu-title">Culture</span> 
+            </a>
+            @endcanany
+          </li>
+
+          <br>
+
+          <li class="nav-item">
+            @canany(['view-notification', 'delete-notification'])
+              <a class="nav-link" href="{{ route('blogs.index') }}">
+                <i class="fas fa-bell menu-icon"></i>
+                <span class="menu-title">Notifications</span> 
+              </a>
+            @endcanany
+          </li>
+
+          <li class="nav-item">
+            @canany(['create-email', 'edit-email', 'delete-email'])
+              <a class="nav-link" href="{{ route('emails.index') }}">
+                <i class="fas fa-envelope menu-icon"></i>
+                <span class="menu-title">Emails</span> 
+              </a>
+            @endcanany
+          </li>
+
+          <li class="nav-item">
+            @canany(['create-chat', 'edit-chat', 'delete-chat'])
+              <a class="nav-link" href="{{ route('posts.index') }}">
+                <i class="fas fa-comments menu-icon"></i>
+                <span class="menu-title">Chats</span> 
+              </a>
+            @endcanany
+          </li>
+
+
+
           
           <!-- <li class="nav-item">
             <a class="nav-link" href="<?php echo url('melody')?>/pages/widgets.html">

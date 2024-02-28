@@ -19,7 +19,8 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="http://www.urbanui.com/" />
 </head>
-<body>
+
+<body class="sidebar-icon-only">
   <div class="container-scroller">
    
     @include('superadmin.layouts.navbar')

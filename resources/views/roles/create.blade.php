@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="<?php echo url('melody') ?>/images/favicon.png" />
 </head>
 
-<body>
+<body class="sidebar-icon-only">
     <div class="container-scroller">
         @include('superadmin.layouts.navbar')
         <div class="container-fluid page-body-wrapper">
