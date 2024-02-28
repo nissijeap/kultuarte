@@ -7,11 +7,12 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EmailController; 
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\NotificationController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -94,12 +95,26 @@ Route::delete('/blogs/{id}', [BlogController::class, 'destroy'])->name('blogs.de
 Route::put('/blogs/{id}', [BlogController::class, 'update'])->name('blogs.update');
 // Route::resource('blogs', BlogController::class);
 
-Route::get('/emails', [EmailController::class, 'index'])->name('emails.index');
+Route::get('/emails/inbox', [EmailController::class, 'index'])->name('emails.index');
+Route::get('/emails/sent', [EmailController::class, 'sent'])->name('emails.sent');
+Route::get('/emails/read', [EmailController::class, 'read'])->name('emails.read');
+Route::get('/emails/unread', [EmailController::class, 'unread'])->name('emails.unread');
 Route::get('/emails/create', [EmailController::class, 'create'])->name('emails.create');
 Route::post('/emails', [EmailController::class, 'store'])->name('emails.store');
 Route::get('/emails/{id}/edit', [EmailController::class, 'edit'])->name('emails.edit');
 Route::get('/emails/{id}/show', [EmailController::class, 'show'])->name('emails.show');
+Route::post('/emails/mark-as-read', [EmailController::class, 'markAsRead'])->name('emails.markAsRead');
+Route::post('/emails/mark-as-unread', [EmailController::class, 'markAsUnread'])->name('emails.markAsUnread');
 Route::delete('/emails/{id}', [EmailController::class, 'destroy'])->name('emails.destroy');
+Route::delete('/emails/inbox', [EmailController::class, 'destroyInbox'])->name('emails.destroyInbox');
 Route::put('/emails/{id}', [EmailController::class, 'update'])->name('emails.update');
+
+Route::get('/notifications', [NotificationController::class, 'index'])->name('notifications.index');
+Route::get('/notifications/create', [NotificationController::class, 'create'])->name('notifications.create');
+Route::post('/notifications', [NotificationController::class, 'store'])->name('notifications.store');
+Route::get('/notifications/{id}/edit', [NotificationController::class, 'edit'])->name('notifications.edit');
+Route::get('/notifications/{id}/show', [NotificationController::class, 'show'])->name('notifications.show');
+Route::delete('/notifications/{id}', [NotificationController::class, 'destroy'])->name('notifications.destroy');
+Route::put('/notifications/{id}', [NotificationController::class, 'update'])->name('notifications.update');
 
 });

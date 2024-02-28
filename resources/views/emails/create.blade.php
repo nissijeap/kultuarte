@@ -106,15 +106,17 @@
                 <div class="row">
                   <div class="col-md-12 mb-4 mt-4">
                     <div class="btn-toolbar">
-                      <div class="btn-group">   
-                        <button type="button" class="btn btn-sm btn-outline-secondary btn-icon-text"><i class="fas fa-reply text-primary btn-icon-prepend"></i> Reply</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary btn-icon-text"><i class="fas fa-reply-all text-primary btn-icon-prepend"></i>Reply All</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary btn-icon-text"><i class="fa fa-share text-primary btn-icon-prepend"></i>Forward</button>
+                    <div class="btn-group">   
+                          <button type="button" class="btn btn-sm btn-outline-secondary btn-icon-text" onclick="goBack()">
+                              <i class="fa fa-arrow-left text-primary btn-icon-prepend"></i> Back
+                          </button>
                       </div>
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary btn-icon-text"><i class="fa fa-paperclip text-primary btn-icon-prepend"></i>Attach</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary btn-icon-text"><i class="fas fa-trash text-primary btn-icon-prepend"></i>Delete</button>
-                      </div>
+
+                      <script>
+                          function goBack() {
+                              window.history.back();
+                          }
+                      </script>
                     </div>
                   </div>
                 </div>
@@ -126,9 +128,11 @@
                             <input type="hidden" name="send_email" value="{{ Auth::user()->email }}">
 
                             <div class="form-group">
-                                <label for="rcpt_email" class="form-label">To</label>
-                                <input type="email" class="form-control" id="rcpt_email" name="rcpt_email" placeholder="Enter recipient email" required>
-                            </div>
+                              <label for="rcpt_email" class="form-label">To</label>
+                              <input type="email" class="form-control" id="rcpt_email" name="rcpt_email" placeholder="Enter recipient email" value="{{ $rcpt_email }}" required>
+                          </div>
+
+
 
                             <div class="form-group">
                                 <label for="subject" class="form-label">Subject</label>
@@ -137,7 +141,7 @@
 
                             <div class="form-group">
                                 <label for="message" class="form-label">Message</label>
-                                <textarea type="text" class="form-control" id="message" name="message" aria-describedby="Text help" placeholder="What's your concern?" required></textarea>
+                                <textarea type="text" class="form-control" id="message" name="message" aria-describedby="Text help" placeholder="What's your concern?" required>{{ $defaultMessage }}</textarea>
                             </div>
                         
                             <button type="submit" class="btn btn-primary">Send</button>

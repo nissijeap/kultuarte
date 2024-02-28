@@ -53,42 +53,39 @@
               </div>
 
               <div class="mail-list-container col-md-10 pt-4 pb-4 border-right bg-white">
-                <div class="row" style="margin-left: 10px;">
-                  <div class="col-md-12 mb-4 mt-4">
-                    @include('emails.show-actions')
-                  </div>
+                <div class="border-bottom pb-4 mb-3 px-3">
+                   @include('emails.actions')
+
                 </div>
-                <div class="message-body" style="padding-left:20px; padding-right:20px">
-                    <div class="sender-details">
-                          <h4>
-                          {{ $email->subject }}
-                          </h4>
-                          </div>
-                  <div class="sender-details">
-                  <div class="user-photo-container">
-                                @if ($user->photo)
-                                    <img src="{{ asset('images/photos/' . $user->photo) }}" alt="Profile Photo" class="shadow-sm rounded-circle" style="width: 50px; height: 50px; object-fit: cover;">
-                                @else
-                                    <img src="{{ asset('images/avatars/null-user.jpg') }}" alt="Default Photo" class="shadow-sm rounded-circle" style="width: 50px; height: 50px; object-fit: cover;">
-                                @endif
-                                </div>
-                    <div class="details col-md-8">
-                      <p class="msg-subject">
-                      {{ $email->send_name }}
-                      </p>
-                      <p class="sender-email text-muted">
-                      {{ $email->send_email }}
-                      </p>
-                    </div>
-                    <div class="col-md-3 text-right">
-                        <p class="message_time text-muted">{{ $email->created_at->diffForHumans() }}</p>
-                    </div>
-                  </div>
-                  <div class="message-content" style="max-width: 90%; overflow-x: hidden;">
-                    <p>{!! $email->message !!}</p>
-                  </div>
+                <div class="mail-list align-items-center">
+                <div class="content align-items-center" >
+                    @forelse($read as $email)
+                        @php
+                            $emailClass = $email->status ? '' : 'unread-email';
+                        @endphp
+                        <a href="{{ route('emails.show', ['id' => $email->id]) }}" class="email-link">
+                          <div class="message row mb-3  align-items-center">
+                            <div class="col-md-1 checkbox-wrapper-mail">
+                                <input type="checkbox" id="chk{{ $email->id }}" class="checkbox-bulk" data-id="{{ $email->id }}" style="width: 20px; height: 20px;">
+                                <label for="chk{{ $email->id }}" class="toggle"></label>
+                            </div>
+                            <div class="col-md-8">
+                                <p class="sender-name">{{ $email->send_name }}</p>
+                                <p class="message_text"><h7 style="font-style: italic;">Subject: </h7>{{ $email->subject }}</p>
+                            </div>
+                            <div class="col-md-3 text-right">
+                                <p class="message_time text-muted">{{ $email->created_at->diffForHumans() }}</p>
+                            </div>
+                        </div>
+                        </a>
+                    @empty
+                        <p class="message_text" style="text-align: center;">No emails received.</p>
+                    @endforelse
                 </div>
-              </div>
+                </div>
+
+            </div>
+
 
             </div>
           </div>

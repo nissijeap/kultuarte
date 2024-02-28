@@ -7,12 +7,22 @@ use Illuminate\Http\Request;
 
 class NotificationController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:view-notification', ['only' => ['index', 'show']]);
+        $this->middleware('permission:delete-notification', ['only' => ['destroy']]);
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $notifications = Notification::all();
+
+        return view('notifications.index', compact('notifications'));
     }
 
     /**
@@ -58,8 +68,12 @@ class NotificationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Notification $notification)
+    public function destroy($id)
     {
-        //
+        $notification = Notification::findOrFail($id);
+        $notification->delete();
+
+        // Optionally, you can redirect the user back to the permissions list
+        return redirect()->route('notifications.index')->with('success', 'Notification deleted successfully');
     }
 }

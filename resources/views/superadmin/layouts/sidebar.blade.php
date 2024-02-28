@@ -125,7 +125,7 @@
 
           <li class="nav-item">
             @canany(['view-notification', 'delete-notification'])
-              <a class="nav-link" href="{{ route('blogs.index') }}">
+              <a class="nav-link" href="{{ route('notifications.index') }}">
                 <i class="fas fa-bell menu-icon"></i>
                 <span class="menu-title">Notifications</span> 
               </a>
@@ -143,7 +143,7 @@
 
           <li class="nav-item">
             @canany(['create-chat', 'edit-chat', 'delete-chat'])
-              <a class="nav-link" href="{{ route('posts.index') }}">
+              <a class="nav-link" href="{{ route('chatify') }}">
                 <i class="fas fa-comments menu-icon"></i>
                 <span class="menu-title">Chats</span> 
               </a>
