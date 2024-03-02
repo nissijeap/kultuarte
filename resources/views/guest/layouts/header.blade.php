@@ -10,8 +10,8 @@
 
       <nav id="navbar" class="navbar">
             <ul>
-            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-            <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+            <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
+            <li><a class="nav-link scrollto" href="{{url('about')}}">About Us</a></li>
             <li class="dropdown"><a href="#"><span>Arts</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                 <li><a href="#">Public Installation</a></li>
@@ -34,7 +34,7 @@
       </nav>
       <!-- .navbar -->
 
-      <a href="" class="btn-get-login">Sign In</a>
+      <a href="{{ route('login') }}" class="btn-get-login">Sign In</a>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </div>
   </header><!-- End Header -->

@@ -10,6 +10,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\guestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +23,18 @@ use App\Http\Controllers\CommentController;
 |
 */
 
-Route::get('/', function () {
-    return view('guest.welcome');
-});
+// guest routes starts here
+
+Route::get('/', function () { return view('guest.welcome'); });
+
+Route::get('/about', [guestController::class, 'aboutView'])->name('about');
+
+
+
+
+// guest routes ends here
+
+
 
 Auth::routes();
 

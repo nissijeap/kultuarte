@@ -22,8 +22,8 @@
                 <div class="col-md-4 mb-4 mb-md-0">
                     <h4>Useful Links</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="{{url('/')}}">Home</a></li>
+                        <li><a href="{{url('about')}}">About Us</a></li>
                         <li><a href="#">Arts</a></li>
                         <li><a href="#">Culture</a></li>
                         <li><a href="#">Contact Us</a></li>
