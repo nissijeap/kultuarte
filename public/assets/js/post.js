@@ -17,11 +17,12 @@ document.addEventListener('DOMContentLoaded', function () {
 function updateShareButtonState() {
     console.log('update');
     var content = document.getElementById('content').value.trim();
+    contentLength = content.length;
     var dropzoneFiles = Dropzone.forElement("#dropzone").getAcceptedFiles().length;
     console.log(dropzoneFiles);
 
     var shareButton = document.getElementById('shareButton');
-    shareButton.disabled = content === '' && dropzoneFiles === 0;
+    shareButton.disabled = contentLength <= 500 && dropzoneFiles === 0;
 
     // Check if the button is disabled
     if (shareButton.disabled) {
@@ -70,7 +71,7 @@ Dropzone.options.dropzone = {
 
 function storePost() {
     var content = document.getElementById('content').value;
-    console.log(content);
+    console.log(content.length);
 
     const dropzoneForm = Dropzone.forElement("#dropzone");
     dropzoneForm.processQueue();
@@ -83,6 +84,15 @@ function storePost() {
 
     formData.append('content', content);
 
+    if(content.length <= 500){
+        Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "That did not work, please add a longer caption",
+            showConfirmButton: false,
+            timer: 1500,
+        });
+    } else {
     $.ajax({
         method: 'POST',
         url: store,
@@ -116,5 +126,6 @@ function storePost() {
             });
         }
     });
+}
 }
 

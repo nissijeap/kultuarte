@@ -14,6 +14,9 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('assets/css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/feather.css') }}">
@@ -26,7 +29,6 @@
     <!-- Sweetalert -->
     <link rel="stylesheet" href="{{ asset('assets/css/sweetalert2.min.css') }}" type="text/css"></link>
     <script src="{{ asset('assets/js/sweetalert2.min.js') }}"></script>
-
 
     <!-- Dropzone -->
     <script src="{{ asset('assets/js/dropzone.js') }}"></script>
@@ -47,6 +49,7 @@
 
     <!-- Post -->
     <script src="{{ asset('assets/js/post.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/js/home.js') }}" type="text/javascript"></script>
     
     <script src="{{ asset('assets/js/plugin.js') }}"></script>
 

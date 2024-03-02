@@ -152,9 +152,9 @@
         </div>
     </form>
 
-    <a href="index.html" class="d-flex align-items-center" style="color:#febb51 !important; text-decoration:none;">
+    <a href="{{ route('home') }}" class="d-flex align-items-center" style="color:#febb51 !important; text-decoration:none; ">
   <img src="{{ asset('assets/images/KultuArte.png') }}" alt="user" class="display1-size w30 me-2 ms-0">
-  <span class="d-inline-block fredoka-font ls-3 fw-600 text-current font-xxl mb-0">KultuArte</span>
+  <span class="d-inline-block fredoka-font ls-3 fw-600 font-xxl mb-0" style="font-family: 'Nunito Sans', sans-serif;  !important; font-weight: bold !important;">KultuArte</span>
 </a>
 
 </div>

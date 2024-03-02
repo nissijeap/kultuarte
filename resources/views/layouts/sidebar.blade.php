@@ -15,10 +15,10 @@
                     </div> -->
 
                         <ul class="mb-3">
-                            <li><a href="default-email-box.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">home</span></a></li>
+                            <li><a href="{{ route('home') }}" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">home</span></a></li>
                             <li><a href="default-hotel.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">notifications</span></a></li>
                             <li><a href="default-event.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">chat</span></a></li>
-                            <li><a href="default-live-stream.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">add_circle</span></a></li>
+                            <li><a href="{{ route('postCreate') }}" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">add_circle</span></a></li>
                             <li><a href="default-live-stream.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">palette</span></a></li>
                             <li><a href="default-live-stream.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">newsmode</span></a></li>
                             <li><a href="default-live-stream.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">settings</span></a></li>

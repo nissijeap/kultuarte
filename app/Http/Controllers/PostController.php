@@ -4,10 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Like;
 use App\Models\Media;
 
 class PostController extends Controller
 {
+    public function like(Request $request){
+        $like = new Like();
+        $like->post_id = $request->input('post_id');
+        $like->user_id = $request->input('user_id');
+        $like->save();
+        return response()->json(['message' => 'Ticket updated successfully']);
+    
+}
+
     public function postCreate() {
         return view('posts.create');
     }

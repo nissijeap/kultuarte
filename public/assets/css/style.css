@@ -6,6 +6,22 @@
 @import url(../vendor/owl-carousel/css/owl.carousel.min.css);
 @import url(../vendor/owl-carousel/css/owl.theme.default.css);
 
+#see-more, #see-less{
+    text-decoration: none !important;
+    color: black !important;
+    font-weight: bold !important;
+}
+
+#see-more:hover, #see-less:hover{
+    text-decoration: underline !important;
+}
+
+.post_container{
+    height: 87vh;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
 .postarea{
     border:none !important; 
     color: black !important; 
@@ -161,10 +177,6 @@
 .icons{
     text-decoration:none !important;
     margin-bottom:17px !important;
-}
-
-.text-current {
-    color: var(--theme-color) !important
 }
 
 .text-red {
@@ -1427,6 +1439,7 @@
     background-image: url('/assets/images/kultuarte-bg.png');
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden !important;
 }
 
 
@@ -14174,7 +14187,7 @@ strong {
 
 .main-content .middle-sidebar-bottom {
     width: 100%;
-    padding: 0px 0 0px 0
+    padding: 0px 0 0px 0;
 }
 
 @media (min-width:1200px) {

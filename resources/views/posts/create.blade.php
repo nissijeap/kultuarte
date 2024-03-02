@@ -14,34 +14,7 @@
             
             <div class="middle-sidebar-bottom">
                 <div class="middle-sidebar-left">
-                    <!-- loader wrapper -->
-                    <div class="preloader-wrap p-3">
-                        <div class="box shimmer">
-                            <div class="lines">
-                                <div class="line s_shimmer"></div>
-                                <div class="line s_shimmer"></div>
-                                <div class="line s_shimmer"></div>
-                                <div class="line s_shimmer"></div>
-                            </div>
-                        </div>
-                        <div class="box shimmer mb-3">
-                            <div class="lines">
-                                <div class="line s_shimmer"></div>
-                                <div class="line s_shimmer"></div>
-                                <div class="line s_shimmer"></div>
-                                <div class="line s_shimmer"></div>
-                            </div>
-                        </div>
-                        <div class="box shimmer">
-                            <div class="lines">
-                                <div class="line s_shimmer"></div>
-                                <div class="line s_shimmer"></div>
-                                <div class="line s_shimmer"></div>
-                                <div class="line s_shimmer"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- loader wrapper -->
+                    @include('layouts.preloader')
                     <div class="row feed-body">
                         <div class="col-lg-8">
                             <div class="card w-100 shadow-xss rounded-xxl border-0 ps-3 pt-3 pe-3 pb-1 mb-3 mt-5">

@@ -6,6 +6,8 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\LikeController;
+use App\Http\Controllers\SaveController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +36,9 @@ Route::resources([
 
 Route::get('postCreate', [PostController::class, 'postCreate'])->name('postCreate');
 Route::post('/store', [PostController::class, 'store'])->name('store');
+
+Route::post('/like', [LikeController::class, 'like'])->name('like');
+Route::post('/unlike', [LikeController::class, 'unlike'])->name('unlike');
+
+Route::post('/save', [SaveController::class, 'save'])->name('save');
+Route::post('/unsave', [SaveController::class, 'unsave'])->name('unsave');
