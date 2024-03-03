@@ -62,7 +62,7 @@
         <div class="row">
             <div class="d-md-flex post-entry-2 half">
                 <a href="#" class="me-4 thumbnail">
-                    <img src="{{url('guest/assets/img/about/about-1.1.jpg')}}" class="img-fluid">
+                    <img src="{{url('guest/assets/img/about/about-1.jpg')}}" class="img-fluid">
                 </a>
                 <div class="ps-md-5 mt-4 mt-md-0">
                     <div class="post-meta mt-4">About us</div>
@@ -75,7 +75,7 @@
 
           <div class="d-md-flex post-entry-2 half mt-5">
                 <a href="#" class="me-4 thumbnail order-2">
-                    <img src="{{url('guest/assets/img/about/about-2.1.jpg')}}" class="img-fluid">
+                    <img src="{{url('guest/assets/img/about/about-2.jpg')}}" class="img-fluid">
                 </a>
                 <div class="pe-md-5 mt-4 mt-md-0">
                     <div class="post-meta mt-4">Goal</div>
