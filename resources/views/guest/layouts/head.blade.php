@@ -23,7 +23,7 @@
   <link href="{{url('guest/assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="{{url('guest/assets/css/style.css')}}" rel="stylesheet">
+  <link href="{{url('guest/assets/css/guest.css')}}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Regna

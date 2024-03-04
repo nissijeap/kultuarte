@@ -8,8 +8,6 @@
 <body data-sidebar="dark">
     <div id="app">
 
-        @include('guest.layouts.header')
-
         @yield('content')
 
     </div>
