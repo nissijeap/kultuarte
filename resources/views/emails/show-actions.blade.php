@@ -17,7 +17,7 @@
     </script>
 
     <div class="btn-group" style="padding-left:30px; padding-right:20px;" >
-        <a  href="{{ route('emails.create', ['rcpt_email' => $user->email]) }}" class="btn btn-sm btn-outline-secondary btn-icon-text">
+        <a  href="{{ route('emails.create', ['rcpt_email' => $email->send_email]) }}" class="btn btn-sm btn-outline-secondary btn-icon-text">
             <i class="fas fa-reply text-primary btn-icon-prepend"></i> Reply
         </a>
 

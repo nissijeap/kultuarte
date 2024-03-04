@@ -172,14 +172,14 @@ class EmailController extends Controller
         $sentCount = Email::where('send_email', auth()->user()->email)->count();
 
         // Get the user's photo for each email sender
-        foreach ($inbox as $email) {
+        foreach ($emails as $email) {
             $user = User::where('email', $email->send_email)->first();
             if ($user) {
                 $email->sender_photo = $user->photo;
             }
         }
 
-        $user = User::find(1); 
+        // $user = User::find(1); 
 
         $users = User::all();
         return view('emails.show', compact('user', 'email', 'emails', 'inbox', 'users', 'inboxCount', 'sent', 'sentCount', 'unread', 'unreadCount', 'read', 'readCount'));

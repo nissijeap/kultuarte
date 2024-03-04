@@ -161,4 +161,10 @@ class UserController extends Controller
         return redirect()->route('users.index')
                 ->withSuccess('User is deleted successfully.');
     }
+    
+    public function isSuperAdmin()
+    {
+        // Check if the user has the 'superadmin' role
+        return $this->hasRole('Super Admin');
+    }
 }

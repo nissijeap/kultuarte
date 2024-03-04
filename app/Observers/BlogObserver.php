@@ -12,7 +12,7 @@ class BlogObserver
         // Create notification
         Notification::create([
             'blog_id' => $blog->id,
-            'message' => "New blog posted.",
+            'message' => "New blog published.",
         ]);
     }
 }

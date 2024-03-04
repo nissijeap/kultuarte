@@ -12,7 +12,7 @@ class PostObserver
         // Create notification
         Notification::create([
             'post_id' => $post->id,
-            'message' => "New post published.",
+            'message' => "New artworks shared.",
         ]);
     }
 }
