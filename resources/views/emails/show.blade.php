@@ -46,6 +46,17 @@
   <!-- main-panel -->
       <div class="main-panel">
         <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title">
+              View Email
+            </h3>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{route('superadmin.dashboard')}}">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Message</li>
+              </ol>
+            </nav>
+          </div>
           <div class="email-wrapper wrapper">
             <div class="row align-items-stretch">
               <div class="mail-sidebar d-none d-lg-block col-md-2 pt-3 bg-white">
@@ -73,12 +84,12 @@
                                 @endif
                                 </div>
                     <div class="details col-md-8">
-                      <p class="msg-subject">
-                      {{ $email->send_name }}
-                      </p>
-                      <p class="sender-email text-muted">
-                      {{ $email->send_email }}
-                      </p>
+                    <p class="msg-subject">
+                        {{ $email->send_name }}
+                    </p>
+                    <p class="sender-email text-muted">
+                       {{ $email->send_email }} <br> To:<code>{{ $email->rcpt_email }}</code>
+                    </p>
                     </div>
                     <div class="col-md-3 text-right">
                         <p class="message_time text-muted">{{ $email->created_at->diffForHumans() }}</p>

@@ -34,6 +34,21 @@ class SuperadminController extends Controller
 
         return view('superadmin.gallery', compact('medias'));
     }
+
+    public function calendar()
+    {
+        $calendar = Media::all();
+
+        return view('superadmin.calendar', compact('calendar'));
+    }
+
+    public function todo()
+    {
+        $medias = Media::all();
+
+        return view('superadmin.todo', compact('medias'));
+    }
+
         
     /**
      * Show the form for creating a new resource.

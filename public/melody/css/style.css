@@ -29215,9 +29215,11 @@ div.tagsinput span.tag a {
 .jsgrid .jsgrid-table .jsgrid-filter-row .auth form .form-group select, .auth form .form-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number], .jsgrid .jsgrid-table .jsgrid-filter-row .auth form .form-group input[type=number], .auth form .form-group .select2-container--default .select2-selection--single, .select2-container--default .auth form .form-group .select2-selection--single, .auth form .form-group .select2-container--default .select2-selection--single .select2-search__field, .select2-container--default .select2-selection--single .auth form .form-group .select2-search__field, .auth form .form-group .typeahead, .auth form .form-group
 .tt-query, .auth form .form-group
 .tt-hint {
-  background: transparent;
+  background: #ffffff;
+  opacity: 60%;
   border-radius: 0;
   font-size: .9375rem;
+  color: #000000;
 }
 
 .auth form .auth-form-btn {

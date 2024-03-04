@@ -20,7 +20,8 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="<?php echo url('melody')?>/images/favicon.png" />
 </head>
-<body class="sidebar-icon-only">
+
+<body>
   <div class="container-scroller">
   @include('superadmin.layouts.navbar')
     <div class="container-fluid page-body-wrapper">
@@ -29,17 +30,6 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-        <div class="page-header">
-            <h3 class="page-title">
-              Notifications
-            </h3>
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{route('superadmin.dashboard')}}">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Notifications</li>
-              </ol>
-            </nav>
-          </div>
             <div class="row">
                 <div class="col-md-6 grid-margin">
                     <div class="card">

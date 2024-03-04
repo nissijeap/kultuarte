@@ -16,6 +16,7 @@
         "munafio/chatify": "^1.6",
         "pusher/pusher-php-server": "^7.2",
         "spatie/laravel-permission": "^6.1",
+        "stripe/stripe-php": "^13.13",
         "yoeunes/toastr": "^2.3"
     },
     "require-dev": {

@@ -44,6 +44,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::get('dashboard', [SuperadminController::class, 'dashboard'])->name('superadmin.dashboard');
 Route::get('gallery', [SuperadminController::class, 'gallery'])->name('superadmin.gallery');
+Route::get('calendar', [SuperadminController::class, 'calendar'])->name('superadmin.calendar');
+Route::get('to-do', [SuperadminController::class, 'todo'])->name('superadmin.todo');
 
 Route::get('permissions', [PermissionController::class, 'index'])->name('permissions.index');
 Route::get('/permissions/create', [PermissionController::class, 'create'])->name('permissions.create');
@@ -66,9 +68,10 @@ Route::get('users', [UserController::class, 'index'])->name('users.index');
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
 Route::post('/users', [UserController::class, 'store'])->name('users.store');
 Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+Route::get('/users/{id}/show', [UserController::class, 'show'])->name('users.show');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
-Route::resource('users', UserController::class);
+// Route::resource('users', UserController::class);
 
 Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
@@ -79,6 +82,9 @@ Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('cat
 Route::resource('categories', CategoryController::class);
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+Route::get('/posts/exhibits', [PostController::class, 'exhibits'])->name('posts.exhibits');
+Route::get('/posts/artists', [PostController::class, 'artists'])->name('posts.artists');
+Route::get('/posts/transactions', [PostController::class, 'transactions'])->name('posts.transactions');
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 Route::get('/posts/{id}/edit', [PostController::class, 'edit'])->name('posts.edit');
@@ -114,6 +120,7 @@ Route::get('/notifications/create', [NotificationController::class, 'create'])->
 Route::post('/notifications', [NotificationController::class, 'store'])->name('notifications.store');
 Route::get('/notifications/{id}/edit', [NotificationController::class, 'edit'])->name('notifications.edit');
 Route::get('/notifications/{id}/show', [NotificationController::class, 'show'])->name('notifications.show');
+Route::get('/notification/{notification}/redirect', [NotificationController::class, 'redirect'])->name('notification.redirect');
 Route::delete('/notifications/{id}', [NotificationController::class, 'destroy'])->name('notifications.destroy');
 Route::put('/notifications/{id}', [NotificationController::class, 'update'])->name('notifications.update');
 

@@ -101,13 +101,31 @@
           </li>
 
           <br>
-          
+
+
           <li class="nav-item">
           @canany(['create-post', 'edit-post', 'delete-post'])
-            <a class="nav-link" href="{{ route('posts.index') }}">
+            <a class="nav-link" data-toggle="collapse" href="#arts" aria-expanded="false" aria-controls="apps">
               <i class="fa fa-paint-brush menu-icon"></i>
-              <span class="menu-title">Arts</span> 
+              <span class="menu-title">Arts</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="arts">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{ route('posts.index') }}"> Manage </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('posts.exhibits') }}"> Exhibits </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('posts.artists') }}"> Artists </a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://m.gcash.com/gcash-login-web/index.html#/" target="_blank">GCash</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://payout.maya.ph/" target="_blank">Maya</a>
+                </li>
+
+                <li class="nav-item"> <a class="nav-link" href="#"> Gallery </a></li>
+              </ul>`
+            </div>
             @endcanany
           </li>
 
@@ -146,6 +164,26 @@
               <a class="nav-link" href="{{ route('chatify') }}">
                 <i class="fas fa-comments menu-icon"></i>
                 <span class="menu-title">Chats</span> 
+              </a>
+            @endcanany
+          </li>
+
+          <br>
+
+          <li class="nav-item">
+            @canany(['create-event', 'edit-event', 'delete-event',])
+              <a class="nav-link" href="{{ route('superadmin.calendar') }}">
+                <i class="fa fa-calendar menu-icon"></i>
+                <span class="menu-title">Calendar</span> 
+              </a>
+            @endcanany
+          </li>
+
+          <li class="nav-item">
+            @canany(['create-todo', 'edit-todo', 'delete-todo'])
+              <a class="nav-link" href="{{ route('superadmin.todo') }}">
+                <i class="fa fa-th-list menu-icon"></i>
+                <span class="menu-title">ToDo List</span> 
               </a>
             @endcanany
           </li>
@@ -415,6 +453,10 @@
               <span class="menu-title">Documentation</span>
             </a>
           </li> -->
+
+          <br>
+          <br>
+          <br>
         </ul>
       </nav>
       <!-- partial -->

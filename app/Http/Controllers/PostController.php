@@ -26,6 +26,28 @@ class PostController extends Controller
         return view('posts.index', compact('posts'));
     }
 
+    public function exhibits()
+    {
+        $posts = Post::all();
+
+        return view('posts.exhibits', compact('posts'));
+    }
+
+    public function artists()
+    {
+        $posts = Post::all();
+
+        return view('posts.artists', compact('posts'));
+    }
+
+    public function transactions()
+    {
+        $posts = Post::all();
+
+        return view('posts.transactions', compact('posts'));
+    }
+
+
     public function create() 
     {
         $posts = Post::all();

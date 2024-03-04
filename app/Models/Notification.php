@@ -21,6 +21,18 @@ class Notification extends Model
         'read_at',
     ];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        // Event listener for creating notifications
+        static::creating(function ($notification) {
+            // Set default values
+            $notification->is_read = 0;
+        });
+    }
+
+
     /**
      * Get the post associated with the notification.
      */

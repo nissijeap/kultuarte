@@ -46,6 +46,18 @@
   <!-- main-panel -->
       <div class="main-panel">
         <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title">
+              All Inbox
+            </h3>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{route('superadmin.dashboard')}}">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Emails</li>
+              </ol>
+            </nav>
+          </div>
+
           <div class="email-wrapper wrapper">
             <div class="row align-items-stretch">
               <div class="mail-sidebar d-none d-lg-block col-md-2 pt-3 bg-white">

@@ -179,6 +179,7 @@ class EmailController extends Controller
             }
         }
 
+        $user = User::find(1); 
 
         $users = User::all();
         return view('emails.show', compact('user', 'email', 'emails', 'inbox', 'users', 'inboxCount', 'sent', 'sentCount', 'unread', 'unreadCount', 'read', 'readCount'));
