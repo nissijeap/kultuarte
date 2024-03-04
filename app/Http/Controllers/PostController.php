@@ -66,12 +66,21 @@ class PostController extends Controller
             }
         }
     
-        return view('posts.create');
+        return view('posts.create',[
+            'saves' => Saved::where('user_id', '=', auth()->user()->id)->latest()->get(),
+            'views' => Recently_Viewed::where('user_id', '=', auth()->user()->id)->latest()->get(),
+        ]);
     }
 
     public function destroy(Post $post): RedirectResponse
     {
         $post->delete();
+        return redirect()->back();
+    }
+
+    public function restore(): RedirectResponse
+    {
+        Post::where('id', 13)->restore();
         return redirect()->back();
     }
 

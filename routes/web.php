@@ -37,6 +37,7 @@ Route::resources([
 
 Route::get('postCreate', [PostController::class, 'postCreate'])->name('postCreate');
 Route::get('arts', [PostController::class, 'arts'])->name('arts');
+Route::get('/restore', [PostController::class, 'restore'])->name('restore');
 Route::post('/store', [PostController::class, 'store'])->name('store');
 Route::post('/update', [PostController::class, 'update'])->name('update');
 Route::delete('/destroy/{post}', [PostController::class, 'destroy'])->name('destroy');

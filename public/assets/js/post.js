@@ -1,19 +1,6 @@
 function photoUp() {
     $("#dropzone").show();
     $("#exit").show();
-
-    $(".image-container").hover(
-        function() {
-            // Mouse over
-            $(this).css('opacity', 0.5);
-            $(this).find(".delete-icon").show().css('opacity', 1);
-        },
-        function() {
-            // Mouse out
-            $(this).css('opacity', 1); // Resetting opacity to 1 when mouse is out
-            $(this).find(".delete-icon").hide();
-        }
-    );
 }
 
 function photoDown() {
@@ -142,12 +129,50 @@ function storePost() {
 }
 }
 
-function updatePost() {
-    var content = document.getElementById('content').value;
-    var id = document.getElementById('post_id').value;
-    console.log(content.length);
+$('div.modal').on('shown.bs.modal', function () {
+    var id = $(this).attr('data-post-id');
+    console.log(id);
+    $("#updateButton-"+id).on("click", function () {
+        updatePost(id);
+    });
 
-    const dropzoneForm = Dropzone.forElement("#dropzone");
+    $("#photoUp-"+id).on("click", function () {
+        dropzoneUp(id);
+    });
+
+    $("#exit-"+id).on("click", function () {
+        dropzoneDown(id);
+    });
+});
+
+function dropzoneUp(id) {
+    $(".dropzone-"+id).show();
+    $("#exit-"+id).show();
+
+    $(".image-container").hover(
+        function() {
+            // Mouse over
+            $(this).css('opacity', 0.5);
+            $(this).find(".delete-icon").show().css('opacity', 1);
+        },
+        function() {
+            // Mouse out
+            $(this).css('opacity', 1); // Resetting opacity to 1 when mouse is out
+            $(this).find(".delete-icon").hide();
+        }
+    );
+}
+
+function dropzoneDown(id) {
+    $(".dropzone-"+id).hide();
+    $("#exit-"+id).hide();
+}
+
+function updatePost(id) {
+    var content = document.getElementById('content-'+id).value;
+    console.log('id' + id + 'content-' + content.length);
+
+    const dropzoneForm = Dropzone.forElement(".dropzone-"+id);
     dropzoneForm.processQueue();
 
     var formData = new FormData(dropzoneForm.element);
@@ -159,7 +184,7 @@ function updatePost() {
     formData.append('content', content);
     formData.append('id', id);
 
-    if(content.length <= 500){
+    if (content.length <= 500) {
         Swal.fire({
             position: "center",
             icon: "error",
@@ -168,38 +193,38 @@ function updatePost() {
             timer: 1500,
         });
     } else {
-    $.ajax({
-        method: 'POST',
-        url: update,
-        data: formData,
-        processData: false,
-        contentType: false,
-        success: function (response) {
-            // Handle success
-            console.log('Updated successfully');
-            Swal.fire({
-                position: "center",
-                icon: "success",
-                title: "Updated Successfully",
-                showConfirmButton: false,
-                timer: 1500,
-            }).then(() => {
-                location.reload();
-            });
-        },
-        error: function (error) {
-            // Handle error
-            console.error('Error posting:', error);
-            Swal.fire({
-                position: "center",
-                icon: "error",
-                title: "That did not work, please add a caption",
-                showConfirmButton: false,
-                timer: 1500,
-            });
-        }
-    });
-}
+        $.ajax({
+            method: 'POST',
+            url: update,
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                // Handle success
+                console.log('Updated successfully');
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Updated Successfully",
+                    showConfirmButton: false,
+                    timer: 1500,
+                }).then(() => {
+                    location.reload();
+                });
+            },
+            error: function (error) {
+                // Handle error
+                console.error('Error posting:', error);
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "That did not work, please add a caption",
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+            }
+        });
+    }
 }
 
 function deletePhoto() {

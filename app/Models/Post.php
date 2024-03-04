@@ -10,6 +10,8 @@ class Post extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    use \Askedio\SoftCascade\Traits\SoftCascadeTrait;
+    protected $softCascade = ['postlikes', 'bookmark'];
     protected $fillable = [
         'user_id',
         'category_id',
