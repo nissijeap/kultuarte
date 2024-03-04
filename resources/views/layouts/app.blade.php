@@ -50,6 +50,9 @@
     <!-- Post -->
     <script src="{{ asset('assets/js/post.js') }}" type="text/javascript"></script>
     <script src="{{ asset('assets/js/home.js') }}" type="text/javascript"></script>
+
+    <!-- Modal -->
+    <script src="{{ asset('assets/js/modal.init.js') }}"></script>
     
     <script src="{{ asset('assets/js/plugin.js') }}"></script>
 

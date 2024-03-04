@@ -19,12 +19,15 @@
                             <li><a href="default-hotel.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">notifications</span></a></li>
                             <li><a href="default-event.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">chat</span></a></li>
                             <li><a href="{{ route('postCreate') }}" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">add_circle</span></a></li>
-                            <li><a href="default-live-stream.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">palette</span></a></li>
+                            <li><a href="{{ route('arts') }}" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">palette</span></a></li>
                             <li><a href="default-live-stream.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">newsmode</span></a></li>
                             <li><a href="default-live-stream.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">settings</span></a></li>
-                            <li><a href="default-live-stream.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">power_settings_new</span></a></li>
+                            <li><a href="" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">power_settings_new</span></a></li>
                             <li class="logo d-none d-xl-block d-lg-block"></li>
                         </ul>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                 </div>
             </div>
         </nav>

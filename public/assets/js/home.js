@@ -5,6 +5,31 @@ document.addEventListener('DOMContentLoaded', function () {
             var postId = this.getAttribute('data-post-id');
             document.getElementById('post' + postId).querySelector('.truncated-content').style.display = 'none';
             document.getElementById('post' + postId).querySelector('.full-content').style.display = 'block';
+            if (seeMoreLink.classList.contains("storeview")){
+            $.ajax({
+                method: 'POST',
+                url: viewed,
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    post_id: postId,
+                    user_id: user_id
+                },
+                success: function (response) {
+                    // Handle success
+                    console.log('success');
+                    var count = $('span#views-'+postId).text();
+                    console.log(count);
+                    count = parseInt(count) + 1;
+                    $('span#views-'+postId).text(count);
+    
+                    seeMoreLink.classList.remove("storeview");
+                },
+                error: function (error) {
+                    // Handle error
+                    console.error('Error liking post:', error);
+                }
+            });
+        }
         });
     });
 
@@ -18,32 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-document.querySelectorAll('.saved').forEach(function (saved) {
-    saved.addEventListener('click', function () {
-        var post_id = this.getAttribute('data-post-id');
-        $.ajax({
-            method: 'POST',
-            url: save,
-            data: {
-                _token: $('meta[name="csrf-token"]').attr('content'),
-                post_id: post_id,
-                user_id: user_id
-            },
-            success: function (response) {
-                // Handle success
-                console.log('success');
-
-                // likeIcon.classList.remove("like", "text-red");
-                // likeIcon.classList.add("unlike", "bg-red-gradiant", "text-white");
-            },
-            error: function (error) {
-                // Handle error
-                console.error('Error liking post:', error);
-            }
-        });
-    });
-});
-
 document.querySelectorAll('.saveParent').forEach(function(saveParent) {
     var saveIcon = saveParent.querySelector('.save, .unsave');
     var post_id = saveIcon.getAttribute('data-post-id');
@@ -52,6 +51,9 @@ document.querySelectorAll('.saveParent').forEach(function(saveParent) {
         console.log("post: " + post_id);
 
         console.log("user: " + user_id);
+        var divElement = $('.text-' + post_id);
+        var spanElement = divElement.find('span');
+       
 
         if (saveIcon.classList.contains("save")) {
             console.log("saved");
@@ -66,11 +68,13 @@ document.querySelectorAll('.saveParent').forEach(function(saveParent) {
                 success: function (response) {
                     // Handle success
                     console.log('success');
-                    $('span#bookmark-'+post_id).text('bookmark_remove');
-                    $('h4#save-'+post_id).text('Unsave Post');
-                    $('h4#save-'+post_id).find('span').text('Remove this from your saved items');
-                    saveIcon.classList.remove("save");
-                    saveIcon.classList.add("unsave");
+                        $('span#bookmark-'+post_id).text('bookmark_remove');
+                        divElement.text('Unsave Post');
+                        console.log(spanElement.text());
+                        spanElement.html('Remove this from your saved items');
+                        saveIcon.classList.remove("save");
+                        saveIcon.classList.add("unsave");
+                    
                 },
                 error: function (error) {
                     // Handle error
@@ -90,11 +94,12 @@ document.querySelectorAll('.saveParent').forEach(function(saveParent) {
                 success: function (response) {
                     // Handle success
                     console.log('success');
-                    $('span#bookmark-'+post_id).text('bookmark_add');
-                    $('h4#unsave-'+post_id).text('Save Post');
-                    $('h4#unsave-'+post_id).find('span').text('Add this to your saved items');
-                    saveIcon.classList.remove("unsave");
-                    saveIcon.classList.add("save");
+                        $('span#bookmark-'+post_id).text('bookmark_add');
+                        divElement.text('Save Post');
+                        console.log(spanElement.text());
+                        spanElement.html('Add this to your saved items');
+                        saveIcon.classList.remove("unsave");
+                        saveIcon.classList.add("save");
                 },
                 error: function (error) {
                     // Handle error

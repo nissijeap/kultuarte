@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\SaveController;
+use App\Http\Controllers\RecentlyViewedController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,10 +36,18 @@ Route::resources([
 ]);
 
 Route::get('postCreate', [PostController::class, 'postCreate'])->name('postCreate');
+Route::get('arts', [PostController::class, 'arts'])->name('arts');
 Route::post('/store', [PostController::class, 'store'])->name('store');
+Route::post('/update', [PostController::class, 'update'])->name('update');
+Route::delete('/destroy/{post}', [PostController::class, 'destroy'])->name('destroy');
+Route::post('/destroyImg', [PostController::class, 'destroyImg'])->name('destroyImg');
 
 Route::post('/like', [LikeController::class, 'like'])->name('like');
 Route::post('/unlike', [LikeController::class, 'unlike'])->name('unlike');
 
 Route::post('/save', [SaveController::class, 'save'])->name('save');
 Route::post('/unsave', [SaveController::class, 'unsave'])->name('unsave');
+Route::get('show_saved', [SaveController::class, 'show_saved'])->name('show_saved');
+
+Route::post('/viewed', [RecentlyViewedController::class, 'viewed'])->name('viewed');
+Route::get('show_view', [RecentlyViewedController::class, 'show_view'])->name('show_view');

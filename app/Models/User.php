@@ -54,4 +54,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Saved::class, 'user_id', 'id');
     }
+
+    public function viewed_post()
+    {
+        return $this->hasMany(Recently_Viewed::class, 'user_id', 'id');
+    }
 }

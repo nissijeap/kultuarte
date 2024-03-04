@@ -7517,10 +7517,10 @@ fieldset:disabled .btn {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1050;
+    z-index: 1;
     width: 100vw;
     height: 100vh;
-    background-color: #000
+    background-color: red
 }
 
 .modal-backdrop.fade {
@@ -7555,7 +7555,7 @@ fieldset:disabled .btn {
 .modal-body {
     position: relative;
     flex: 1 1 auto;
-    padding: 1rem
+    padding: .25rem
 }
 
 .modal-footer {
@@ -9334,6 +9334,10 @@ fieldset:disabled .btn {
 
 .mb-auto {
     margin-bottom: auto !important
+}
+
+.ms--3 {
+    margin-left: -3rem !important
 }
 
 .ms-0 {

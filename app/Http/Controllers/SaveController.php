@@ -7,9 +7,17 @@ use Illuminate\Http\JsonResponse;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Saved;
+use App\Models\Recently_viewed;
 
 class SaveController extends Controller
 {
+    public function show_saved() {
+        return view('posts.show_saved',[
+            'saves' => Saved::where('user_id', '=', auth()->user()->id)->latest()->get(),
+            'views' => Recently_Viewed::where('user_id', '=', auth()->user()->id)->latest()->get(),
+        ]);
+    }
+
     public function save(Request $request): JsonResponse
     {  
         try {

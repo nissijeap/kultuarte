@@ -18,7 +18,7 @@
                     <div class="row feed-body">
                         <div class="col-lg-8 post_container">
                             <div class="card w-100 shadow-xss rounded-xxl border-0 ps-3 pt-3 pe-3 pb-1 mb-3 mt-5">
-                                <h5 style="font-weight:bold !important;">Home</h5>
+                                <h5 style="font-weight:bold !important;">Visual Arts</h5>
                             </div>
 
                                 @forelse($posts as $post)

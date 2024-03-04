@@ -18,23 +18,23 @@
                     <div class="row feed-body">
                         <div class="col-lg-8 post_container">
                             <div class="card w-100 shadow-xss rounded-xxl border-0 ps-3 pt-3 pe-3 pb-1 mb-3 mt-5">
-                                <h5 style="font-weight:bold !important;">Home</h5>
+                                <h5 style="font-weight:bold !important;">Saved Posts</h5>
                             </div>
 
-                                @forelse($posts as $post)
+                                @forelse($saves as $save)
                                 <div class="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-3">
                                     <div class="card-body p-0 d-flex">
                                         <figure class="avatar me-3"><img src="{{ asset('assets/images/user-7.png') }}" alt="image" class="shadow-sm rounded-circle w45"></figure>
-                                        <h4 class="fw-700 text-grey-900 font-xssss mt-1">{{ $post->user->name }}  <span class="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">{{ $post->created_at->diffForHumans() }}</span></h4>
+                                        <h4 class="fw-700 text-grey-900 font-xssss mt-1">{{ $save->post->user->name }}  <span class="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">{{ $save->post->created_at->diffForHumans() }}</span></h4>
                                         <a href="#" class="ms-auto" id="dropdownMenu2" data-bs-toggle="dropdown"
                                         data-bs-target="#dropdown-menu"aria-expanded="false" aria-controls="collapseExample">
                                             <i class="ti-more-alt text-grey-900 btn-round-md bg-greylight font-xss"></i></a>
                                         <div class="dropdown-menu dropdown-menu-end p-4 rounded-xxl show border-0 shadow-lg" aria-labelledby="dropdownMenu2">
-                                            @if ($post->user_id === auth()->user()->id)
+                                            @if ($save->post->user_id === auth()->user()->id)
                                                 <div class="card-body p-0 d-flex mt-2">
-                                                    <button type="button" class="card-body p-0 d-flex" data-post-id="{{ $post->id }}" style="border: none;background: none;color: inherit;text-decoration: none; text-align: left;" data-bs-toggle="modal" data-bs-target="#postModal{{ $post->id }}"><span class="material-symbols-outlined text-black-500 me-3 font-lg">edit</span><h4 class="fw-600 text-grey-900 font-xssss mt-0 me-4 unsave text-{{ $post->id }}" data-post-id="{{ $post->id }}">Edit Post <span class="d-block font-xsssss fw-500 lh-3 text-grey-500 smallText-{{ $post->id }}">Modify this post</span></h4></button>
+                                                    <button type="button" class="card-body p-0 d-flex" data-post-id="{{ $save->post->id }}" style="border: none;background: none;color: inherit;text-decoration: none; text-align: left;" data-bs-toggle="modal" data-bs-target="#postModal{{ $save->post->id }}"><span class="material-symbols-outlined text-black-500 me-3 font-lg">edit</span><h4 class="fw-600 text-grey-900 font-xssss mt-0 me-4 unsave text-{{ $save->post->id }}" data-post-id="{{ $save->post->id }}">Edit Post <span class="d-block font-xsssss fw-500 lh-3 text-grey-500 smallText-{{ $save->post->id }}">Modify this post</span></h4></button>
                                                    
-                                                    <div class="modal fade bs-example-modal-center" id="postModal{{ $post->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal fade bs-example-modal-center" id="postModal{{ $save->post->id }}" tabindex="-1" role="dialog" aria-hidden="true">
                                                         <div class="modal-dialog modal-dialog-centered">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -45,10 +45,10 @@
                                                                 <div class="w-100 rounded-xxl border-0 mb-0">
                                                                             <div class="card-body p-0 mt-1 mb-3 position-relative" style="border: 1px gray !important; border-radius:15px !important; background: white !important;">
                                                                                 <figure class="avatar position-absolute ms-2 mt-1 top-5"><img src="{{ asset('assets/images/profile-4.png') }}" alt="image" class="shadow-sm rounded-circle w30"></figure>
-                                                                                <input type="hidden" id="post_id" name="post_id" value="{{ $post->id }}">
-                                                                                <textarea name="content" id="content" class="h100 bor-0 w-100 rounded-xxl p-2 ps-5 font-xss fw-500 border-light-md theme-dark-bg postarea" cols="30" rows="10">{{ $post->content }}
+                                                                                <input type="hidden" id="post_id" name="post_id" value="{{ $save->post->id }}">
+                                                                                <textarea name="content" id="content" class="h100 bor-0 w-100 rounded-xxl p-2 ps-5 font-xss fw-500 border-light-md theme-dark-bg postarea" cols="30" rows="10">{{ $save->post->content }}
                                                                                 </textarea>
-                                                                                @foreach($post->media as $media)
+                                                                                @foreach($save->post->media as $media)
                                                                                         @php
                                                                                             $mediaPath = public_path($media->media);
                                                                                             $imageInfo = @getimagesize($mediaPath);
@@ -91,23 +91,23 @@
                                                     </div><!-- /.modal -->  
                                                 </div>
                                                 <div class="card-body p-0 d-flex" style="cursor: pointer;">
-                                                    <form id="deleteForm{{ $post->id }}" action="{{ route('destroy', $post->id) }}" method="post">
+                                                    <form id="deleteForm{{ $save->post->id }}" action="{{ route('destroy', $save->post->id) }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
-                                                            <button type="submit" class="card-body p-0 d-flex" data-post-id="{{ $post->id }}" style="border: none;background: none;color: inherit;text-decoration: none; text-align: left;"><span class="material-symbols-outlined text-black-500 me-3 font-lg">delete</span><h4 class="fw-600 text-grey-900 font-xssss mt-0 me-4 unsave text-{{ $post->id }}" data-post-id="{{ $post->id }}">Delete Post <span class="d-block font-xsssss fw-500 lh-3 text-grey-500 smallText-{{ $post->id }}">Remove this from your timeline</span></h4></button>
+                                                            <button type="submit" class="card-body p-0 d-flex" data-post-id="{{ $save->post->id }}" style="border: none;background: none;color: inherit;text-decoration: none; text-align: left;"><span class="material-symbols-outlined text-black-500 me-3 font-lg">delete</span><h4 class="fw-600 text-grey-900 font-xssss mt-0 me-4 unsave text-{{ $save->post->id }}" data-post-id="{{ $save->post->id }}">Delete Post <span class="d-block font-xsssss fw-500 lh-3 text-grey-500 smallText-{{ $save->post->id }}">Remove this from your timeline</span></h4></button>
                                                     </form>
                                                 </div>
                                                 <div>
                                             </div>
                                             @else
                                                 <div class="card-body p-0 d-flex saveParent" style="cursor: pointer;">
-                                                    @if (auth()->user()->bookmark()->where('post_id', $post->id)->exists())
-                                                        <span class="material-symbols-outlined text-black-500 me-3 font-lg" id="bookmark-{{ $post->id }}">bookmark_remove</span>
-                                                        <div class="fw-600 text-grey-900 font-xssss mt-0 me-4 unsave text-{{ $post->id }}" data-post-id="{{ $post->id }}">Unsave Post <span class="d-block font-xsssss fw-500 lh-3 text-grey-500 smallText-{{ $post->id }}">Remove this from your saved items</span></div>
+                                                    @if (auth()->user()->bookmark()->where('post_id', $save->post->id)->exists())
+                                                        <span class="material-symbols-outlined text-black-500 me-3 font-lg" id="bookmark-{{ $save->post->id }}">bookmark_remove</span>
+                                                        <div class="fw-600 text-grey-900 font-xssss mt-0 me-4 unsave text-{{ $save->post->id }}" data-post-id="{{ $save->post->id }}">Unsave Post <span class="d-block font-xsssss fw-500 lh-3 text-grey-500 smallText-{{ $save->post->id }}">Remove this from your saved items</span></div>
                                                     
                                                     @else
-                                                        <span class="material-symbols-outlined text-black-500 me-3 font-lg" id="bookmark-{{ $post->id }}">bookmark_add</span>
-                                                        <div class="fw-600 text-grey-900 font-xssss mt-0 me-4 save text-{{ $post->id }}" data-post-id="{{ $post->id }}">Save Post <span class="d-block font-xsssss fw-500 lh-3 text-grey-500 smallText-{{ $post->id }}">Add this to your saved items</span></div>
+                                                        <span class="material-symbols-outlined text-black-500 me-3 font-lg" id="bookmark-{{ $save->post->id }}">bookmark_add</span>
+                                                        <div class="fw-600 text-grey-900 font-xssss mt-0 me-4 save text-{{ $save->post->id }}" data-post-id="{{ $save->post->id }}">Save Post <span class="d-block font-xsssss fw-500 lh-3 text-grey-500 smallText-{{ $save->post->id }}">Add this to your saved items</span></div>
                                                     @endif
                                                 </div>
                                                 <div class="card-body p-0 d-flex mt-2">
@@ -118,30 +118,30 @@
                                         </div>
                                     </div>
                                     <div class="card-body p-0 me-lg-5">
-                                        <div id="post{{ $post->id }}" class="post-content">
-                                            @if (strlen($post->content) > 500)
+                                        <div id="post{{ $save->post->id }}" class="post-content">
+                                            @if (strlen($save->post->content) > 500)
                                                 <p class="truncated-content">
-                                                    {{ \Illuminate\Support\Str::limit($post->content, 500, $end='...') }}
-                                                    @if (auth()->user()->viewed_post()->where('post_id', $post->id)->exists())
-                                                    <a href="" class="fw-600 text-primary ms-2 see-more" id="see-more" data-post-id="{{ $post->id }}">See more</a>
+                                                    {{ \Illuminate\Support\Str::limit($save->post->content, 500, $end='...') }}
+                                                    @if (auth()->user()->viewed_post()->where('post_id', $save->post->id)->exists())
+                                                    <a href="" class="fw-600 text-primary ms-2 see-more" id="see-more" data-post-id="{{ $save->post->id }}">See more</a>
                                                     @else
-                                                    <a href="" class="fw-600 text-primary ms-2 see-more storeview" id="see-more" data-post-id="{{ $post->id }}">See more</a>
+                                                    <a href="" class="fw-600 text-primary ms-2 see-more storeview" id="see-more" data-post-id="{{ $save->post->id }}">See more</a>
                                                     @endif
                                                 </p>
                                                 <p class="full-content" style="display: none;">
-                                                    {{ $post->content }}
-                                                    <a href="" class="fw-600 text-primary ms-2 see-less" id="see-less" data-post-id="{{ $post->id }}">See less</a>
+                                                    {{ $save->post->content }}
+                                                    <a href="" class="fw-600 text-primary ms-2 see-less" id="see-less" data-post-id="{{ $save->post->id }}">See less</a>
                                                 </p>
                                             @else
-                                                <p>{{ $post->content }}</p>
+                                                <p>{{ $save->post->content }}</p>
                                             @endif
                                         </div>
                                     </div>
                                 
                                         <div class="card-body d-block p-0">
                                             <div class="row ps-2 pe-2">
-                                            @foreach($medias as $media)
-                                                @if($post->id === $media->post_id)
+                                            @foreach($save->post->media as $media)
+                                                @if($save->post->id === $media->post_id)
                                                 @php
                                                     $mediaPath = public_path($media->media);
                                                     $imageInfo = @getimagesize($mediaPath);
@@ -170,17 +170,17 @@
                                         
                                     <div class="card-body d-flex p-0 mt-3" id="likes">
                                         <div class="emoji-bttn d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss likeParent">
-                                        @if (auth()->user()->likes()->where('post_id', $post->id)->exists())
-                                            <i class="feather-heart text-white bg-red-gradiant me-2 btn-round-xs font-xs unlike" data-post-id="{{ $post->id }}"></i>
+                                        @if (auth()->user()->likes()->where('post_id', $save->post->id)->exists())
+                                            <i class="feather-heart text-white bg-red-gradiant me-2 btn-round-xs font-xs unlike" data-post-id="{{ $save->post->id }}"></i>
                                         @else
-                                            <i class="feather-heart text-red me-2 btn-round-xs font-xs like" data-post-id="{{ $post->id }}"></i>
+                                            <i class="feather-heart text-red me-2 btn-round-xs font-xs like" data-post-id="{{ $save->post->id }}"></i>
                                         @endif
                                         </div>
                                         <div class="emoji-bttn d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss me-2">
-                                        <a id="count-{{ $post->id }}">{{ $post->postlikes()->count() }}</a>
+                                        <a id="count-{{ $save->post->id }}">{{ $save->post->postlikes()->count() }}</a>
                                         </div>
                                         
-                                        <div class="d-flex align-items-center fw-600 text-grey-900 text-dark me-1 lh-26 font-xssss"><i class="feather-eye text-dark text-grey-900 btn-round-sm font-lg"></i><span class="d-none-xss" id="views-{{ $post->id }}">{{ $post->views }}</span></div>
+                                        <div class="d-flex align-items-center fw-600 text-grey-900 text-dark me-1 lh-26 font-xssss"><i class="feather-eye text-dark text-grey-900 btn-round-sm font-lg"></i><span class="d-none-xss" id="views-{{ $save->post->id }}">{{ $save->post->views }}</span></div>
 
                                         <a href="#" class="d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss"><i class="feather-message-circle text-dark text-grey-900 btn-round-sm font-lg"></i><span class="d-none-xss">22 Comment</span></a>
 

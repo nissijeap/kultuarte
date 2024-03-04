@@ -1,6 +1,19 @@
 function photoUp() {
     $("#dropzone").show();
     $("#exit").show();
+
+    $(".image-container").hover(
+        function() {
+            // Mouse over
+            $(this).css('opacity', 0.5);
+            $(this).find(".delete-icon").show().css('opacity', 1);
+        },
+        function() {
+            // Mouse out
+            $(this).css('opacity', 1); // Resetting opacity to 1 when mouse is out
+            $(this).find(".delete-icon").hide();
+        }
+    );
 }
 
 function photoDown() {
@@ -129,3 +142,85 @@ function storePost() {
 }
 }
 
+function updatePost() {
+    var content = document.getElementById('content').value;
+    var id = document.getElementById('post_id').value;
+    console.log(content.length);
+
+    const dropzoneForm = Dropzone.forElement("#dropzone");
+    dropzoneForm.processQueue();
+
+    var formData = new FormData(dropzoneForm.element);
+
+    dropzoneForm.files.forEach(function (file) {
+        formData.append('files[]', file);
+    });
+
+    formData.append('content', content);
+    formData.append('id', id);
+
+    if(content.length <= 500){
+        Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "That did not work, please add a longer caption",
+            showConfirmButton: false,
+            timer: 1500,
+        });
+    } else {
+    $.ajax({
+        method: 'POST',
+        url: update,
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (response) {
+            // Handle success
+            console.log('Updated successfully');
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Updated Successfully",
+                showConfirmButton: false,
+                timer: 1500,
+            }).then(() => {
+                location.reload();
+            });
+        },
+        error: function (error) {
+            // Handle error
+            console.error('Error posting:', error);
+            Swal.fire({
+                position: "center",
+                icon: "error",
+                title: "That did not work, please add a caption",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+        }
+    });
+}
+}
+
+function deletePhoto() {
+        var id = document.getElementById('deleteButton').getAttribute('data-image-id');
+        console.log(id);
+
+    $.ajax({
+        method: 'POST',
+        url: destroyImg,
+        data: {
+            _token: $('meta[name="csrf-token"]').attr('content'),
+            id: id,
+        },
+        success: function (response) {
+            // Handle success
+            console.log('Deleted successfully');
+            $('.image-container').remove();
+        },
+        error: function (error) {
+            // Handle error
+            console.error('Error deleting:', error);
+        }
+    });
+}

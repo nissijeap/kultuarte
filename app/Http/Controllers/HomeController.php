@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Media;
 use App\Models\Saved;
+use App\Models\Recently_Viewed;
 
 class HomeController extends Controller
 {
@@ -30,6 +31,7 @@ class HomeController extends Controller
             'posts' => Post::latest()->get(),
             'medias' => Media::latest()->get(),
             'saves' => Saved::where('user_id', '=', auth()->user()->id)->latest()->get(),
+            'views' => Recently_Viewed::where('user_id', '=', auth()->user()->id)->latest()->get(),
         ]);
     }
 }
