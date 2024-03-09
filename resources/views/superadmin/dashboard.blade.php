@@ -52,10 +52,9 @@
                       <div class="statistics-item">
                         <p>
                           <i class="icon-sm fa fa-user mr-2"></i>
-                          New users
+                          New Users
                         </p>
                         <h2>54000</h2>
-                        <label class="badge badge-outline-success badge-pill">2.7% increase</label>
                       </div>
                       <div class="statistics-item">
                         <p>
@@ -63,7 +62,6 @@
                           Avg Time
                         </p>
                         <h2>123.50</h2>
-                        <label class="badge badge-outline-danger badge-pill">30% decrease</label>
                       </div>
                       <div class="statistics-item">
                         <p>
@@ -71,7 +69,6 @@
                           Downloads
                         </p>
                         <h2>3500</h2>
-                        <label class="badge badge-outline-success badge-pill">12% increase</label>
                       </div>
                       <div class="statistics-item">
                         <p>
@@ -79,7 +76,6 @@
                           Update
                         </p>
                         <h2>7500</h2>
-                        <label class="badge badge-outline-success badge-pill">57% increase</label>
                       </div>
                       <div class="statistics-item">
                         <p>
@@ -87,7 +83,6 @@
                           Sales
                         </p>
                         <h2>9000</h2>
-                        <label class="badge badge-outline-success badge-pill">10% increase</label>
                       </div>
                       <div class="statistics-item">
                         <p>
@@ -95,7 +90,6 @@
                           Pending
                         </p>
                         <h2>7500</h2>
-                        <label class="badge badge-outline-danger badge-pill">16% decrease</label>
                       </div>
                   </div>
                 </div>

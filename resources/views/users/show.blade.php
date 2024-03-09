@@ -32,7 +32,7 @@
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="page-header">
-                        <h3 class="page-title">User ID #{{ $user->id }}</h3>
+                        <h3 class="page-title">Approval for User ID #{{ $user->id }}</h3>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ route('users.index') }}">Users</a></li>
@@ -40,40 +40,168 @@
                             </ol>
                         </nav>
                     </div>
+
                     <div class="row">
-                        <div class="col-12 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">{{ $user->name }} Details</h4>
-                                    <br>
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="border-bottom text-center pb-4">
+                            <div class="user-photo-container">
+                                @if ($user->photo)
+                                    <img src="{{ asset('images/photos/' . $user->photo) }}" alt="Profile Photo" class="shadow-sm rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                                @else
+                                    <img src="{{ asset('images/avatars/null-user.jpg') }}" alt="Default Photo" class="shadow-sm rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                                @endif
+                            </div><br>
 
-                    <div class="mb-3 row">
-                        <label for="name" class="col-md-4 col-form-label text-md-end text-start"><strong>Name:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
-                            {{ $user->name }}
-                        </div>
-                    </div>
-
-                    <div class="mb-3 row">
-                        <label for="email" class="col-md-4 col-form-label text-md-end text-start"><strong>Email Address:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
-                            {{ $user->email }}
-                        </div>
-                    </div>
-
-                    <div class="mb-3 row">
-                        <label for="roles" class="col-md-4 col-form-label text-md-end text-start"><strong>Roles:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
-                            @forelse ($user->getRoleNames() as $role)
-                                <span class="badge bg-primary">{{ $role }}</span>
-                            @empty
-                            @endforelse
-                        </div>
-                    </div>
-                    </div>
+                            <div>
+                                <h3> {{ $user->name }}</h3>
+                                <p>
+                                  @forelse ($user->getRoleNames() as $role)
+                                  <span>{{ $role }}</span>
+                                  @empty
+                                  @endforelse
+                                </p>
                             </div>
-                        </div>
+
+                            <div class="row">
+                              <div class="col-md-4">
+                              <div class="d-flex justify-content-between">
+                                <a class="badge badge-primary mr-1" style="color:white">
+                                  Actions
+                              </a>
+
+                                    <a href="{{ route('emails.create', ['rcpt_email' => $user->email]) }}" class="badge badge-outline-dark mr-1"><i class="fas fa-envelope"></i> Email</a>
+                                    <a href="{{ route('chatify') }}" class="badge badge-outline-dark mr-1"><i class="fas fa-comments"></i> Chat</a>
+                                    <a href="{{ route('permissions.index') }}" class="badge badge-outline-dark mr-1"><i class="fas fa-key"></i> Permissions</a>
+                                    @forelse ($user->getRoleNames() as $roleName)
+                                      @php
+                                          $role = \Spatie\Permission\Models\Role::where('name', $roleName)->first();
+                                      @endphp
+                                      @if ($role)
+                                          <a href="{{ route('roles.show', ['id' => $role->id]) }}" class="badge badge-outline-dark mr-1"><i class="fas fa-lock"></i> Role</a>
+                                      @endif
+                                      @empty
+                                    @endforelse
+                                    
+                                </div>
+
+                              </div>
+
+                            @if($user->is_approved == 1)
+                            <div class="col-md-8">
+                              <div class="d-flex justify-content-end">
+                                  <span class="btn btn-success approve-btn"  style="margin-right: 15px;"><i class="fas fa-check"></i> Approved</span>
+
+                                  <form action="{{ route('users.deny', ['id' => $user->id]) }}" method="POST">
+                                      @csrf
+                                      <button type="submit" class="btn btn-danger deny-btn">
+                                          <i class="fas fa-times"></i>
+                                      </button>
+                                  </form>
+                              </div>
+                            </div>
+                            @elseif($user->is_approved == 2)
+                            <div class="col-md-8">
+                              <div class="d-flex justify-content-end">
+                                  <span class="btn btn-danger approve-btn"  style="margin-right: 15px;"><i class="fas fa-times"></i> Denied</span>
+                                  <form action="{{ route('users.approve', ['id' => $user->id]) }}" method="POST" class="mr-2">
+                                      @csrf
+                                      <button type="submit" class="btn btn-success approve-btn">
+                                          <i class="fas fa-check"></i>
+                                      </button>
+                                  </form>
+                                </div>
+                            </div>
+                            @else
+                            <div class="col-md-8">
+                                  <div class="d-flex justify-content-end">
+                                      <form action="{{ route('users.approve', ['id' => $user->id]) }}" method="POST" class="mr-2">
+                                          @csrf
+                                          <button type="submit" class="btn btn-success approve-btn">
+                                              <i class="fas fa-check"></i> Approve
+                                          </button>
+                                      </form>
+                                      <form action="{{ route('users.deny', ['id' => $user->id]) }}" method="POST">
+                                          @csrf
+                                          <button type="submit" class="btn btn-danger deny-btn">
+                                              <i class="fas fa-times"></i> Deny
+                                          </button>
+                                      </form>
+                                  </div>
+                              </div>
+                            @endif
+                          </div>
                     </div>
+
+                      
+                      <div class="py-4">
+                        <p class="clearfix">
+                          <span class="float-left">
+                            Approval Status
+                          </span>
+
+                          @if($user->is_approved == 1)
+                              <span class="float-right" style="color: green;">Approved</span>
+                          @elseif($user->is_approved == 2)
+                              <span class="float-right"  style="color: red;">Denied</span>
+                          @else
+                              <span class="float-right"  style="color: orange;">Pending</span>
+                          @endif
+                        </p>
+                        <p class="clearfix">
+                          <span class="float-left">
+                            Full Name
+                          </span>
+                          <span class="float-right text-muted">
+                          {{ $user->name }}
+                          </span>
+                        </p>
+                        <p class="clearfix">
+                          <span class="float-left">
+                            Role
+                          </span>
+                          <span class="float-right text-muted">
+                          @forelse ($user->getRoleNames() as $roleName)
+                          @php
+                              $role = \Spatie\Permission\Models\Role::where('name', $roleName)->first();
+                          @endphp
+                          @if ($role)
+                          {{ $role->name }}
+                          @endif
+                          @empty
+                        @endforelse
+                          </span>
+                        </p>
+                       
+                        <p class="clearfix">
+                          <span class="float-left">
+                            Phone Number
+                          </span>
+                          <span class="float-right text-muted">
+                          {{ $user->phone }}
+                          </span>
+                        </p>
+                        <p class="clearfix">
+                          <span class="float-left">
+                            Email Address
+                          </span>
+                          <span class="float-right text-muted">
+                          {{ $user->email }}
+                          </span>
+                        </p>
+                        
+                      </div>
+                      <button class="btn btn-primary btn-block">Profile</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
                 </div>
                 <!-- content-wrapper ends -->
                 @include('superadmin.layouts.footer')

@@ -87,7 +87,7 @@
           <li class="nav-item">
           @canany(['create-permission', 'edit-permission', 'delete-permission'])
             <a class="nav-link" href="{{ route('permissions.index') }}">
-              <i class="fa fa-lock menu-icon"></i>
+              <i class="fa fa-key menu-icon"></i>
               <span class="menu-title">Permissions</span> 
             </a>
             @endcanany
@@ -96,7 +96,7 @@
           <li class="nav-item">
           @canany(['create-role', 'edit-role', 'delete-role'])
             <a class="nav-link" href="{{ route('roles.index') }}">
-              <i class="fa fa-key menu-icon"></i>
+              <i class="fas fa-lock menu-icon"></i>
               <span class="menu-title">Roles</span> 
             </a>
             @endcanany
@@ -104,13 +104,21 @@
 
           <li class="nav-item">
           @canany(['create-user', 'edit-user', 'delete-user'])
-            <a class="nav-link" href="{{ route('users.index') }}">
-              <i class="fa fa-user menu-icon"></i>
-              <span class="menu-title">Users</span> 
+            <a class="nav-link" data-toggle="collapse" href="#users" aria-expanded="false" aria-controls="apps">
+              <i class="fa fa-users menu-icon"></i>
+              <span class="menu-title">Users</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="users">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{ route('users.index') }}"> Manage </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('users.pending') }}"> Pending </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('users.approved') }}"> Approved </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('users.denied') }}"> Denied </a></li>
+              </ul>`
+            </div>
             @endcanany
           </li>
-
 
           <li class="nav-item">
               <a class="nav-link disabled-link" href="#" style="color:#e15600;">
@@ -147,16 +155,8 @@
             <div class="collapse" id="arts">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{ route('posts.index') }}"> Manage </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('posts.exhibits') }}"> Exhibits </a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('posts.artists') }}"> Artists </a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://m.gcash.com/gcash-login-web/index.html#/" target="_blank">GCash</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="https://payout.maya.ph/" target="_blank">Maya</a>
-                </li>
-
+                <li class="nav-item"> <a class="nav-link" href="{{ route('posts.exhibits') }}"> Exhibits </a></li>
                 <li class="nav-item"> <a class="nav-link" href="#"> Gallery </a></li>
               </ul>`
             </div>

@@ -18736,7 +18736,7 @@ input:focus {
 }
 
 .sidebar-dark .sidebar .nav.sub-menu .nav-item .nav-link.active {
-  color: #c0bbbb;
+  color: white;
   background: transparent;
 }
 

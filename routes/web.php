@@ -66,6 +66,11 @@ Route::put('/roles/{id}', [RoleController::class, 'update'])->name('roles.update
 Route::resource('roles', RoleController::class);
 
 Route::get('users', [UserController::class, 'index'])->name('users.index');
+Route::get('pending-users', [UserController::class, 'pending'])->name('users.pending');
+Route::get('approved-users', [UserController::class, 'approved'])->name('users.approved');
+Route::get('denied-users', [UserController::class, 'denied'])->name('users.denied');
+Route::post('users/{id}/approve', [UserController::class, 'approve'])->name('users.approve');
+Route::post('users/{id}/deny', [UserController::class, 'deny'])->name('users.deny');
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
 Route::post('/users', [UserController::class, 'store'])->name('users.store');
 Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');

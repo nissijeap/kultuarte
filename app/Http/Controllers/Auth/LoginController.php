@@ -23,15 +23,27 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         try {
-            if ($user->hasRole(['Super Admin', 'Admin'])) {
-                return redirect('/dashboard')->with('success', 'Welcome back, Super Admin!');
+            if ($user->is_approved == 1) {
+                // User is approved, proceed with login
+                if ($user->hasRole(['Super Admin', 'Admin'])) {
+                    return redirect('/dashboard')->with('success', 'Welcome back, Super Admin!');
+                } else {
+                    return redirect('/home')->with('success', 'Welcome back! How are you?');
+                }
+            } elseif ($user->is_approved == 0) {
+                // User is pending approval
+                Auth::logout(); // Logout the user
+                return redirect('/login')->with('warning', 'Wait! Your account is pending approval.');
             } else {
-                return redirect('/home')->with('success', 'Welcome back! How are you?');
+                // User is denied approval
+                Auth::logout(); // Logout the user
+                return redirect('/login')->with('error', 'Sorry! Your account has been denied.');
             }
         } catch (\Exception $e) {
             return redirect()->back()->withInput()->with('error', 'Oops! Something went wrong.')->with('toastr', 'error');
         }
     }
+
 
     public function logout(Request $request)
     {

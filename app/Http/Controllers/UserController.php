@@ -8,7 +8,9 @@ use App\Http\Requests\UpdateUserRequest;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Spatie\Permission\Models\Role;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
@@ -18,7 +20,7 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('permission:create-user|edit-user|delete-user', ['only' => ['index','show']]);
+        $this->middleware('permission:create-user|edit-user|delete-user', ['only' => ['index','show', 'test', 'pending', 'approved', 'denied']]);
         $this->middleware('permission:create-user', ['only' => ['create','store']]);
         $this->middleware('permission:edit-user', ['only' => ['edit','update']]);
         $this->middleware('permission:delete-user', ['only' => ['destroy']]);
@@ -32,6 +34,27 @@ class UserController extends Controller
         $users = User::all();
         
         return view('users.index', compact('users'));
+    }
+
+    public function pending(): View
+    {
+        $users = User::where('is_approved', 0)->get();
+        
+        return view('users.pending', compact('users'));
+    }
+
+    public function approved(): View
+    {
+        $users = User::where('is_approved', 1)->get();
+        
+        return view('users.approved', compact('users'));
+    }
+
+    public function denied(): View
+    {
+        $users = User::where('is_approved', 2)->get();
+        
+        return view('users.denied', compact('users'));
     }
 
     /**
@@ -141,6 +164,34 @@ class UserController extends Controller
         } catch (\Exception $e) {
             // If an exception occurs, redirect back with error message
             return redirect()->back()->withInput()->with('error', 'Oops! Something went wrong.');
+        }
+    }
+
+    public function approve(Request $request, $id)
+    {
+        try {
+            $user = User::findOrFail($id);
+            $user->is_approved = 1; // Set approval status to 1 (approved)
+            $user->approved_at = Carbon::now(); // Set approval date to current time
+            $user->save();
+            
+            return redirect()->back()->with('success', 'User approved successfully.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to approve user.');
+        }
+    }
+    
+    public function deny(Request $request, $id)
+    {
+        try {
+            $user = User::findOrFail($id);
+            $user->is_approved = 2; // Set approval status to 2 (denied)
+            $user->approved_at = Carbon::now(); // Set approval date to current time
+            $user->save();
+            
+            return redirect()->back()->with('success', 'User denied successfully.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to deny user.');
         }
     }
 
