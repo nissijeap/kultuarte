@@ -1,6 +1,6 @@
 <div class="card w-100 shadow-xss rounded-xxl border-0 mb-3 mt-5">
     <div class="card-body d-flex align-items-center p-4">
-    <span class="material-symbols-outlined">visibility</span>
+        <span class="material-symbols-outlined">visibility</span>
         <h4 class="fw-700 mb-0 font-xs text-grey-900">&nbsp;Recently Viewed</h4>
         <a href="{{ route('show_view') }}" class="fw-600 ms-auto font-xssss text-primary" style="text-decoration:none;">See all</a>
     </div>
