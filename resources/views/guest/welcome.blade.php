@@ -1,37 +1,35 @@
-@extends('guest.layouts.app')
+@extends('guest.general_layouts.app')
 
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top d-flex align-items-center header-transparent">
     <div class="container d-flex justify-content-between align-items-center">
 
       <div id="logo">
-        <a href=""><img src="{{url('guest/assets/img/logo-header.png')}}"></a>
-        <!-- Uncomment below if you prefer to use a text logo -->
-        <!--<h1><a href="index.html">Regna</a></h1>-->
+        <a href="{{url('/')}}"><img src="{{url('guest/assets/img/logo-header.png')}}"></a>
       </div>
 
       <nav id="navbar" class="navbar">
             <ul>
-            <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
-            <li><a class="nav-link scrollto" href="{{url('about')}}">About Us</a></li>
-            <li class="dropdown"><a href="#"><span>Arts</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                <li><a href="#">Public Installation</a></li>
-                <li><a href="#">Visual Artworks</a></li>
-                <li><a href="#">Visual Artists</a></li>
-                <li><a href="#">Upcoming Events</a></li>
-                <li><a href="#">Organizations</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a href="#"><span>Culture</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                <li><a href="#">People</a></li>
-                <li><a href="#">Places</a></li>
-                <li><a href="#">Cultural Events</a></li>
-                <li><a href="#">Annual Events</a></li>
-                </ul>
-            </li>
-            <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
+                <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
+                <li><a class="nav-link scrollto" href="{{url('about')}}">About Us</a></li>
+                <li class="dropdown"><a href="#"><span>Arts</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="{{url('art/installations')}}">Public Installation</a></li>
+                        <li><a href="{{url('art/artworks')}}">Visual Artworks</a></li>
+                        <li><a href="{{url('art/artists')}}">Visual Artists</a></li>
+                        <li><a href="{{url('art/events')}}">Upcoming Events</a></li>
+                        <li><a href="{{url('art/organizations')}}">Organizations</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>Culture</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                    <li><a href="{{url('culture/people')}}">People</a></li>
+                    <li><a href="{{url('culture/places')}}">Places</a></li>
+                    <li><a href="{{url('culture/cultural_events')}}">Cultural Events</a></li>
+                    <li><a href="{{url('culture/annual_events')}}">Annual Events</a></li>
+                    </ul>
+                </li>
+                <li><a class="nav-link scrollto" href="{{url('contact')}}">Contact Us</a></li>
             </ul>
       </nav>
       <!-- .navbar -->
@@ -39,8 +37,9 @@
       <a href="{{ route('login') }}" class="btn-get-login">Sign In</a>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </div>
-</header>
-<!-- End Header -->
+</header
+><!-- End Header -->
+
 
 @section('content')
 
@@ -285,7 +284,7 @@
         <div class="text-center">
           <h3>Connect With Us</h3>
           <p> Your thoughts matter. Drop us a line through our <span style="color: #fcc309; font-weight: bolder;">Contact Us</span> portal.</p>
-          <a class="cta-btn" href="#">Click Me</a>
+          <a class="cta-btn" href="{{url('contact')}}">Click Me</a>
         </div>
 
       </div>

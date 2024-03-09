@@ -1,35 +1,63 @@
-@extends('guest.layouts.app')
+@extends('guest.general_layouts.app')
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>KultuArte</title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
+  <!-- Favicons -->
+  <link href="{{url('guest/assets/img/logo.png')}}" rel="icon">
+  <link href="{{url('guest/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url('guest/assets/vendor/aos/aos.css')}}" rel="stylesheet">
+  <link href="{{url('guest/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url('guest/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{url('guest/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{url('guest/assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+  <link href="{{url('guest/assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url('guest/assets/css/guest.css')}}" rel="stylesheet">
+</head>
 
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top d-flex align-items-center header-transparent">
     <div class="container d-flex justify-content-between align-items-center">
 
       <div id="logo">
-        <a href=""><img src="{{url('guest/assets/img/logo-header.png')}}"></a>
+        <a href="{{url('/')}}"><img src="{{url('guest/assets/img/logo-header.png')}}"></a>
       </div>
 
       <nav id="navbar" class="navbar">
             <ul>
-            <li><a class="nav-link scrollto" href="{{url('/')}}">Home</a></li>
-            <li><a class="nav-link scrollto  active" href="{{url('about')}}">About Us</a></li>
-            <li class="dropdown"><a href="#"><span>Arts</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                <li><a href="#">Public Installation</a></li>
-                <li><a href="#">Visual Artworks</a></li>
-                <li><a href="#">Visual Artists</a></li>
-                <li><a href="#">Upcoming Events</a></li>
-                <li><a href="#">Organizations</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a href="#"><span>Culture</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                <li><a href="#">People</a></li>
-                <li><a href="#">Places</a></li>
-                <li><a href="#">Cultural Events</a></li>
-                <li><a href="#">Annual Events</a></li>
-                </ul>
-            </li>
-            <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
+                <li><a class="nav-link scrollto" href="{{url('/')}}">Home</a></li>
+                <li><a class="nav-link scrollto active" href="{{url('about')}}">About Us</a></li>
+                <li class="dropdown"><a href="#"><span>Arts</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="{{url('art/installations')}}">Public Installation</a></li>
+                        <li><a href="{{url('art/artworks')}}">Visual Artworks</a></li>
+                        <li><a href="{{url('art/artists')}}">Visual Artists</a></li>
+                        <li><a href="{{url('art/events')}}">Upcoming Events</a></li>
+                        <li><a href="{{url('art/organizations')}}">Organizations</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>Culture</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                    <li><a href="{{url('culture/people')}}">People</a></li>
+                    <li><a href="{{url('culture/places')}}">Places</a></li>
+                    <li><a href="{{url('culture/cultural_events')}}">Cultural Events</a></li>
+                    <li><a href="{{url('culture/annual_events')}}">Annual Events</a></li>
+                    </ul>
+                </li>
+                <li><a class="nav-link scrollto" href="{{url('contact')}}">Contact Us</a></li>
             </ul>
       </nav>
       <!-- .navbar -->
@@ -39,6 +67,7 @@
     </div>
 </header>
 <!-- End Header -->
+
 
 @section('content')
 
@@ -96,7 +125,7 @@
                     <h2 class="display-4 mb-4">Latest Events</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, rem eaque vel est asperiores iste pariatur placeat molestias, rerum provident ea maiores debitis eum earum esse quas architecto! Minima, voluptatum! Minus tempora distinctio quo sint est blanditiis voluptate eos. Commodi dolore nesciunt culpa adipisci nemo expedita suscipit autem dolorum rerum?</p>
                     <p>At magni dolore ullam odio sapiente ipsam, numquam eius minus animi inventore alias quam fugit corrupti error iste laboriosam dolorum culpa doloremque eligendi repellat iusto vel impedit odit cum. Sequi atque molestias nesciunt rem eum pariatur quibusdam deleniti saepe eius maiores porro quam, praesentium ipsa deserunt laboriosam adipisci. Optio, animi!</p>
-                    <p><a href="#" class="more">View All Event Posts</a></p>
+                    <p><a href="{{url('/events')}}" class="more">View All Event Posts</a></p>
                 </div>
                 <div class="col-lg-6">
                     <div class="row">
@@ -112,160 +141,70 @@
         </div>
     </section>
 
-    <!-- =======Team Section ======= -->
-    <section class="section-agents">
-        <div class="container">
+    <!-- ======= Our Team Section ======= -->
+    <div id="team" class="team mb-5 pt-5 pb-5 mt-5">
+      <div class="container">
 
-            <div class="section-header">
-                <h2>Team</h2>
-                <p>Meet Our <span>Team</span></p>
-            </div>
-
-            <div class="row">
-
-                <div class="col-md-4">
-                    <div class="card-box-d">
-                        <div class="card-img-d">
-                            <img src="{{url('guest/assets/img/profile/tina.jpg')}}" class="img-fluid">
-                        </div>
-
-                        <div class="card-overlay card-overlay-hover">
-                            <div class="card-header-d">
-                                <div class="card-title-d align-self-center">
-                                    <h4 class="title-d">
-                                        <div class="link-two">
-                                            Christina Mae<br> Gerzon
-                                        </div>
-                                    </h4>
-                                </div>
-                            </div>
-
-                            <div class="card-footer-d">
-                                <div class="socials-footer d-flex justify-content-center">
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-facebook" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-twitter" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-instagram" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-linkedin" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card-box-d">
-                        <div class="card-img-d">
-                            <img src="{{url('guest/assets/img/profile/sophia.jpg')}}" class="img-fluid">
-                        </div>
-
-                        <div class="card-overlay card-overlay-hover">
-                            <div class="card-header-d">
-                                <div class="card-title-d align-self-center">
-                                    <h4 class="title-d">
-                                        <div class="link-two">
-                                            Sophia Jade<br> Esclares
-                                        </div>
-                                    </h4>
-                                </div>
-                            </div>
-
-                            <div class="card-footer-d">
-                                <div class="socials-footer d-flex justify-content-center">
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-facebook" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-twitter" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-instagram" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-linkedin" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card-box-d">
-                        <div class="card-img-d">
-                            <img src="{{url('guest/assets/img/profile/nissi.jpg')}}" class="img-fluid">
-                        </div>
-
-                        <div class="card-overlay card-overlay-hover">
-                            <div class="card-header-d">
-                                <div class="card-title-d align-self-center">
-                                    <h4 class="title-d">
-                                        <div class="link-two">
-                                            Nissi Jea<br> Paglinawan
-                                        </div>
-                                    </h4>
-                                </div>
-                            </div>
-
-                            <div class="card-footer-d">
-                                <div class="socials-footer d-flex justify-content-center">
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-facebook" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-twitter" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-instagram" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#" class="link-one">
-                                                <i class="bi bi-linkedin" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="section-header">
+            <h2>team</h2>
+            <p>Meet Our <span>Team</span></p>
         </div>
-    </section>
+
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="member">
+              <img src="{{url('guest/assets/img/profile/tina.jpg')}}">
+              <h4>Christina Mae Gerzon</h4>
+              <span>Full Stack Developer</span>
+              <p>
+                Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui
+              </p>
+              <div class="social-about">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="member">
+              <img src="{{url('guest/assets/img/profile/sophia.jpg')}}">
+              <h4>Sophia Jade Esclares</h4>
+              <span>Full Stack Developer</span>
+              <p>
+                Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
+              </p>
+              <div class="social-about">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="member">
+              <img src="{{url('guest/assets/img/profile/nissi.jpg')}}" alt="">
+              <h4>Nissi Jea Paglinawan</h4>
+              <span>Full Stack Developer</span>
+              <p>
+                Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
+              </p>
+              <div class="social-about">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Our Team Section -->
 </main>
 
 @endsection

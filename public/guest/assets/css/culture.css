@@ -1,0 +1,524 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Smooch&family=Vujahday+Script&display=swap');
+
+body {
+  background: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  color: #e15600;
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  color: #e15600;
+  outline: none;
+  text-decoration: none;
+}
+
+section {
+    overflow: hidden;
+    padding: 80px 0;
+    scroll-margin-top: 90px;
+    overflow: clip;
+}
+
+.section-title {
+    text-align: center;
+    padding: 30px 0;
+    position: relative;
+  }
+
+.section-title p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    margin-bottom: 2%;
+    position: relative;
+}
+
+
+/* header starts here */
+
+#header {
+  height: 90px;
+  transition: all 0.5s;
+  z-index: 997;
+  background: #000;
+}
+
+#header #logo img {
+  padding: 0;
+  margin: 0;
+}
+
+#header.header-transparent { background: transparent; }
+.scrolled-offset { margin-top: 70px; }
+
+#header.header-scrolled {
+  background: #000;
+  height: 70px;
+  transition: all 0.5s;
+}
+
+#header .btn-get-login {
+    margin-left: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #e15600;
+    color: #fff;
+    border-radius: 50px;
+    padding: 8px 25px;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+#header .btn-get-login:hover { opacity: 0.9; }
+
+/* header ends here */
+
+
+/* navigation starts here */
+
+.navbar { padding: 0; }
+.navbar li { position: relative; }
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover>a { color: #fe9f0b; }
+.navbar .dropdown ul li { min-width: 200px; }
+.navbar .dropdown ul a i { font-size: 12px; }
+.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover>a { color: #fe9f0b; }
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar>ul>li {
+  white-space: nowrap;
+  padding: 10px 0 10px 24px;
+}
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 14px;
+  padding: 0 4px;
+  white-space: nowrap;
+  transition: 0.3s;
+  letter-spacing: 0.4px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.navbar a i,
+.navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.navbar>ul>li>a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background-color: #e15600;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.navbar a:hover:before, .navbar li:hover>a:before, .navbar .active:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 24px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  background: #000;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.navbar .dropdown ul a {
+  padding: 10px 20px;
+  font-size: 14px;
+  text-transform: none;
+  color: #fff;
+}
+
+.navbar .dropdown:hover>ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.navbar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+
+.navbar .dropdown .dropdown:hover>ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul { left: -90%; }
+  .navbar .dropdown .dropdown:hover>ul { left: -100%; }
+}
+
+/* navigation ends here */
+
+/* breadcrumbs starts here */
+
+.breadcrumbs {
+    background: url(../img/posts/culture/culture-banner.jpg);
+    padding: 140px 0 60px 0;
+    min-height: 30vh;
+    position: relative;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .breadcrumbs:before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    inset: 0;
+  }
+
+  .breadcrumbs h2 {
+    font-size: 56px;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0 0 10px 0;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #e15600;
+  }
+
+  .breadcrumbs ol a {
+    text-transform: uppercase;
+    color: #fe9f0b;
+    transition: 0.3s;
+  }
+
+  .breadcrumbs ol a:hover {
+    text-decoration: none;
+    opacity: 0.9;
+  }
+
+  .breadcrumbs ol li+li { padding-left: 10px; }
+  .breadcrumbs ol li+li::before {
+    display: inline-block;
+    padding-right: 10px;
+    color: #fe9f0b;
+    content: "/";
+  }
+
+/* breadcrumbs ends here */
+
+/* people page starts here */
+
+.post-entry-2 { margin-bottom: 30px; }
+
+.post-entry-2 h2{
+    color: #000;
+    font-weight: 500;
+}
+
+.post-entry-2 p{
+    font-family: "Nunito", sans-serif;
+    font-size: 14.8px;
+}
+
+.post-entry-2 .post-meta {
+  font-size: 11px;
+  letter-spacing: 0.07rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  color: rgba(var(--color-black-rgb), 0.4);
+  margin-bottom: 10px;
+}
+
+.post-entry-2 .thumbnail { flex: 0 0 65%; }
+.post-entry-2.half .thumbnail { flex: 0 0 50%; }
+.post-entry-2.small-img .thumbnail { flex: 0 0 30%; }
+
+@media (max-width: 960px) {
+  .post-entry-2 .thumbnail {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .post-entry-2.half .thumbnail {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .post-entry-2.small-img .thumbnail {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.latest h2{
+    color: #000;
+    font-weight: 500;
+}
+
+.latest p{
+    font-family: "Nunito", sans-serif;
+    font-size: 14.8px;
+}
+
+.more {
+    font-family: "Nunito", sans-serif;
+    text-transform: uppercase;
+    color: #ed3c0d;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.more:before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ed3c0d;
+}
+
+/* people page ends here */
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+    padding: 5rem 0 2.5rem 0;
+    color: #e15600;
+    background: #000;
+    background-size: cover;
+    position: relative;
+}
+
+.footer h4, .footer ul li {
+    margin-bottom: 10px;
+    transition: 0.5s ease;
+}
+.footer ul li a:hover{ color: #fe9f0b; }
+
+.footer .footer-legal .copyright {
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.social a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #e15600;
+    position: relative;
+    text-align: center;
+    transition: 0.3s background ease;
+    color: #eee;
+    line-height: 0;
+}
+
+.social a span {
+    display: inline-block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.social a:hover {background: #fe9f0b; }
+.social a i { line-height: 0; }
+
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #e15600;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.4s;
+  }
+
+  .back-to-top i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+  }
+
+  .back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /*--------------------------------------------------------------
+  # Disable AOS delay on mobile
+  --------------------------------------------------------------*/
+  @media screen and (max-width: 768px) {
+    [data-aos-delay] {
+      transition-delay: 0 !important;
+    }
+  }
+
+
+/* Mobile Navigation */
+
+.mobile-nav-toggle {
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: 0.5s;
+  }
+
+  @media (max-width: 991px) {
+    .mobile-nav-toggle { display: block; }
+    .navbar ul { display: none; }
+  }
+
+  .navbar-mobile {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: #000;
+    transition: 0.3s;
+    z-index: 999;
+  }
+
+  .navbar-mobile .mobile-nav-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  .navbar-mobile ul {
+    display: block;
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    padding: 10px 0;
+    background-color: #fff;
+    overflow-y: auto;
+    transition: 0.3s;
+  }
+
+  .navbar-mobile>ul>li {
+    padding: 0;
+  }
+
+  .navbar-mobile a:hover:before,
+  .navbar-mobile li:hover>a:before,
+  .navbar-mobile .active:before {
+    visibility: hidden;
+  }
+
+  .navbar-mobile a,
+  .navbar-mobile a:focus {
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #666666;
+  }
+
+  .navbar-mobile a:hover,
+  .navbar-mobile .active,
+  .navbar-mobile li:hover>a {
+    color: #e15600;
+  }
+
+  .navbar-mobile .getstarted,
+  .navbar-mobile .getstarted:focus {
+    margin: 15px;
+  }
+
+  .navbar-mobile .dropdown ul {
+    position: static;
+    display: none;
+    margin: 10px 20px;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 1;
+    visibility: visible;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  }
+
+  .navbar-mobile .dropdown ul li {
+    min-width: 200px;
+  }
+
+  .navbar-mobile .dropdown ul a {
+    padding: 10px 20px;
+  }
+
+  .navbar-mobile .dropdown ul a i {
+    font-size: 12px;
+  }
+
+  .navbar-mobile .dropdown ul a:hover,
+  .navbar-mobile .dropdown ul .active:hover,
+  .navbar-mobile .dropdown ul li:hover>a {
+    color: #e15600;
+  }
+
+  .navbar-mobile .dropdown>.dropdown-active {
+    display: block;
+  }
+

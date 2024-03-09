@@ -28,9 +28,20 @@ use App\Http\Controllers\guestController;
 Route::get('/', function () { return view('guest.welcome'); });
 
 Route::get('/about', [guestController::class, 'aboutView'])->name('about');
+Route::get('/events', [guestController::class, 'eventView'])->name('events');
 
+Route::get('/contact', [guestController::class, 'contactView'])->name('contact');
 
+Route::get('/art/installations', [guestController::class, 'publicInstallation'])->name('arts.installation');
+Route::get('/art/artworks', [guestController::class, 'visualArtwork'])->name('arts.artwork');
+Route::get('/art/artists', [guestController::class, 'visualArtists'])->name('arts.artists');
+Route::get('/art/events', [guestController::class, 'upcomingEvents'])->name('arts.events');
+Route::get('/art/organizations', [guestController::class, 'artOrganization'])->name('arts.organizations');
 
+Route::get('/culture/people', [guestController::class, 'people'])->name('culture.people');
+Route::get('/culture/places', [guestController::class, 'places'])->name('culture.places');
+Route::get('/culture/cultural_events', [guestController::class, 'culturalEvents'])->name('culture.events');
+Route::get('/culture/annual_events', [guestController::class, 'annualEvents'])->name('culture.annual');
 
 // guest routes ends here
 

@@ -24,30 +24,28 @@
                     <ul class="list-unstyled">
                         <li><a href="{{url('/')}}">Home</a></li>
                         <li><a href="{{url('about')}}">About Us</a></li>
-                        <li><a href="#">Arts</a></li>
-                        <li><a href="#">Culture</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="{{url('contact')}}">Contact Us</a></li>
                     </ul>
                 </div>
 
                 <div class="col-md-4 mb-4 mb-md-0">
                     <h4>Arts</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#">Public Installation</a></li>
-                        <li><a href="#">Visual Artworks</a></li>
-                        <li><a href="#">Visual Artists</a></li>
-                        <li><a href="#">Upcoming Events</a></li>
-                        <li><a href="#">Organizations</a></li>
+                        <li><a href="{{url('art/installations')}}">Public Installation</a></li>
+                        <li><a href="{{url('art/artworks')}}">Visual Artworks</a></li>
+                        <li><a href="{{url('art/artists')}}">Visual Artists</a></li>
+                        <li><a href="{{url('art/events')}}">Upcoming Events</a></li>
+                        <li><a href="{{url('art/organizations')}}">Organizations</a></li>
                     </ul>
                 </div>
 
                 <div class="col-md-4 mb-4 mb-md-0">
                     <h4>Culture</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#">People</a></li>
-                        <li><a href="#">Places</a></li>
-                        <li><a href="#">Cultural Events</a></li>
-                        <li><a href="#">Annual Events</a></li>
+                        <li><a href="{{url('culture/people')}}">People</a></li>
+                        <li><a href="{{url('culture/places')}}">Places</a></li>
+                        <li><a href="{{url('culture/cultural_events')}}">Cultural Events</a></li>
+                        <li><a href="{{url('culture/annual_events')}}">Annual Events</a></li>
                     </ul>
                 </div>
           </div>
