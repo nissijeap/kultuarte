@@ -50,6 +50,11 @@ class User extends Authenticatable
         return $this->hasMany(Like::class, 'user_id', 'id');
     }
 
+    public function comment_likes()
+    {
+        return $this->hasMany(Comment_Like::class, 'user_id', 'id');
+    }
+
     public function bookmark()
     {
         return $this->hasMany(Saved::class, 'user_id', 'id');
@@ -58,5 +63,10 @@ class User extends Authenticatable
     public function viewed_post()
     {
         return $this->hasMany(Recently_Viewed::class, 'user_id', 'id');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'user_id', 'id');
     }
 }

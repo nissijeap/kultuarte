@@ -12,6 +12,7 @@
     @empty
     <div class="card-body d-flex pt-4 ps-4 pe-4 pb-0 border-top-xs bor-0">
         <p>Nothing in Saved</p>
+        <a href="{{ route('restore') }}"><i class="mdi mdi-restore" data-toggle="tooltip" title="Restore Ticket">Restore Post</i></a>
     </div>
     @endforelse
 </div>

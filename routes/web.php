@@ -9,6 +9,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\SaveController;
 use App\Http\Controllers\RecentlyViewedController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,11 @@ Route::post('/destroyImg', [PostController::class, 'destroyImg'])->name('destroy
 
 Route::post('/like', [LikeController::class, 'like'])->name('like');
 Route::post('/unlike', [LikeController::class, 'unlike'])->name('unlike');
+
+Route::post('/comment', [CommentController::class, 'comment'])->name('comment');
+Route::post('/deleteComment', [CommentController::class, 'deleteComment'])->name('deleteComment');
+Route::post('/editComment', [CommentController::class, 'editComment'])->name('editComment');
+Route::post('/upvote', [CommentController::class, 'upvote'])->name('upvote');
 
 Route::post('/save', [SaveController::class, 'save'])->name('save');
 Route::post('/unsave', [SaveController::class, 'unsave'])->name('unsave');

@@ -171,3 +171,105 @@ document.querySelectorAll('.likeParent').forEach(function(likeParent) {
     
 });
 
+document.querySelectorAll('.commentLink').forEach(function (comment) {
+    comment.addEventListener('click', function (event) {
+        event.preventDefault();
+        var id = this.getAttribute('data-post-id');
+        const userComments = document.getElementById("userComments-" + id);
+
+        if (userComments) {
+            console.log("user comments");
+            userComments.style.display = (userComments.style.display === 'none' || userComments.style.display === '') ? 'block' : 'none';
+            console.log(userComments);
+        }
+    });
+});
+
+document.querySelectorAll('.reply').forEach(function (reply) {
+    reply.addEventListener('click', function (event) {
+        event.preventDefault();
+        var id = this.getAttribute('data-comment-id');
+        console.log(id);
+        const userReply = document.getElementById("userReply-" + id);
+
+        if (userReply) {
+            console.log("user comments");
+            userReply.style.display = (userReply.style.display === 'none' || userReply.style.display === '') ? 'block' : 'none';
+            console.log(userReply);
+        }
+    });
+});
+
+document.querySelectorAll('.upvote').forEach(function (upvote) {
+    upvote.addEventListener('click', function (event) {
+        event.preventDefault();
+        var comment_id = this.getAttribute('data-comment-id');
+        const upvoteElement = document.getElementById("upvote-" + comment_id);
+
+        if (upvoteElement.classList.contains('upvote')){
+            $.ajax({
+                method: 'POST',
+                url: upvoteRoute,
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    upvote_id: comment_id,
+                },
+                success: function (response) {
+                    // Handle success
+                    console.log('success');
+                    upvoteElement.style.color = '#e15600';
+                    var count = $('#upCount-'+comment_id).text();
+                    count = parseInt(count) + 1;
+                    $('#upCount-'+comment_id).text(count);
+                    upvoteElement.classList.add('downvote');
+                    upvoteElement.classList.remove('upvote');
+                },
+                error: function (error) {
+                    // Handle error
+                    console.error('Error liking comment:', error);
+                }
+            });
+        } else if (upvoteElement.classList.contains('downvote')){
+            $.ajax({
+                method: 'POST',
+                url: upvoteRoute,
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    downvote_id: comment_id,
+                },
+                success: function (response) {
+                    // Handle success
+                    console.log('success');
+                    upvoteElement.style.color = '';
+                    var count = $('#upCount-'+comment_id).text();
+                    count = parseInt(count) - 1;
+                    $('#upCount-'+comment_id).text(count);
+                    upvoteElement.classList.add('upvote');
+                    upvoteElement.classList.remove('downvote');
+                },
+                error: function (error) {
+                    // Handle error
+                    console.error('Error liking comment:', error);
+                }
+            });
+        }
+
+        // if (upvoteElement) {
+        //     console.log("user comments");
+        //     upvoteElement.classList.toggle('upvote');
+        //     upvoteElement.classList.toggle('downvote');
+        //     console.log(upvoteElement);
+        // }
+    });
+});
+
+
+const textarea = document.querySelectorAll('.auto-resize-textarea');
+textarea.addEventListener('input', function () {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+});
+
+    
+    
+

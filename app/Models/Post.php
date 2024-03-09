@@ -11,7 +11,7 @@ class Post extends Model
     use HasFactory;
     use SoftDeletes;
     use \Askedio\SoftCascade\Traits\SoftCascadeTrait;
-    protected $softCascade = ['postlikes', 'bookmark'];
+    protected $softCascade = ['postlikes', 'bookmark', 'viewed', 'comments'];
     protected $fillable = [
         'user_id',
         'category_id',
@@ -37,5 +37,15 @@ class Post extends Model
     public function bookmark()
     {
         return $this->hasMany(Saved::class, 'post_id', 'id');
+    }
+
+    public function viewed()
+    {
+        return $this->hasMany(Recently_Viewed::class, 'post_id', 'id');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'post_id', 'id');
     }
 }

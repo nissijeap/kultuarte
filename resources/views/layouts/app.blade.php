@@ -32,13 +32,12 @@
 
     <!-- Dropzone -->
     <script src="{{ asset('assets/js/dropzone.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('assets/css/dropzone.min.css') }}" type="text/css"></link>
+    <link rel="stylesheet" href="{{ asset('assets/css/dropzone.min.css') }}" type="text/css"></link>    
 
-    
-    <link rel="stylesheet" href="{{ asset('assets/css/lightbox.css') }}">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 </head>
 <body>
     <div id="app">
@@ -50,6 +49,7 @@
     <!-- Post -->
     <script src="{{ asset('assets/js/post.js') }}" type="text/javascript"></script>
     <script src="{{ asset('assets/js/home.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/js/comment.js') }}" type="text/javascript"></script>
 
     <!-- Modal -->
     <!-- <script src="{{ asset('assets/js/modal.init.js') }}"></script> -->
