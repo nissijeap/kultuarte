@@ -7,77 +7,44 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
-
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
 
-    protected function attemptLogin(Request $request)
-    {
-        // Attempt to log in as a regular user
-        $regularUserAttempt = Auth::guard('web')->attempt($this->credentials($request));
-
-        // If regular user login is successful, redirect to '/home'
-        if ($regularUserAttempt) {
-            return true;
-        }
-
-        // Attempt to log in as a guest
-        $guestUserAttempt = Auth::guard('guests')->attempt($this->credentials($request));
-
-        // If guest user login is successful, redirect to '/guests'
-        if ($guestUserAttempt) {
-            return true;
-        }
-
-        return false;
-    }
-
     protected function authenticated(Request $request, $user)
     {
-        if ($user->hasRole(['Super Admin', 'Admin'])) {
-            return redirect('/dashboard');
-        } else {
-            return redirect('/home');
+        try {
+            if ($user->hasRole(['Super Admin', 'Admin'])) {
+                return redirect('/dashboard')->with('success', 'Welcome back, Super Admin!');
+            } else {
+                return redirect('/home')->with('success', 'Welcome back! How are you?');
+            }
+        } catch (\Exception $e) {
+            return redirect()->back()->withInput()->with('error', 'Oops! Something went wrong.')->with('toastr', 'error');
         }
     }
 
     public function logout(Request $request)
     {
-        Auth::logout();
+        try {
+            Auth::logout();
 
-        $request->session()->invalidate();
+            $request->session()->invalidate();
 
-        $request->session()->regenerateToken();
+            $request->session()->regenerateToken();
 
-        return redirect('/login');
+            return redirect('/login')->with('success', 'Logged out! Hope to see you again soon.');;
+        } catch (\Exception $e) {
+            return redirect()->back()->withInput()->with('error', 'Oops! Something went wrong.')->with('toastr', 'error');
+        }
     }
 }

@@ -104,7 +104,7 @@
                 <div class="mb-4">
                   <div class="form-check">
                     <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input">
+                      <input type="checkbox" class="form-check-input" required>
                       I agree to all Terms & Conditions
                     </label>
                   </div>
