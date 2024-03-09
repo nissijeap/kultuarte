@@ -7,7 +7,12 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Arts | List</title>
+  <title>KultuArte: Culture and Visual Arts</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- Favicons -->
+    <link href="{{url('guest/assets/img/logo.png')}}" rel="icon">
+    <link href="{{url('guest/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?php echo url('melody')?>/vendors/iconfonts/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="<?php echo url('melody')?>/vendors/css/vendor.bundle.base.css">

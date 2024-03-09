@@ -7,7 +7,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>KultuArte</title>
+    <title>KultuArte: Culture and Visual Arts</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- Favicons -->
+    <link href="{{url('guest/assets/img/logo.png')}}" rel="icon">
+    <link href="{{url('guest/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
