@@ -18601,6 +18601,11 @@ input:focus {
   color: #ffffff;
 }
 
+.sidebar-dark .sidebar .nav .nav-item.nav-profile .profile-name .designation {
+  color: #ffffff;
+  font-size: .75rem;
+}
+
 .sidebar .nav .nav-item.nav-profile .profile-name .designation {
   color: #686868;
   font-size: .75rem;
@@ -18696,6 +18701,10 @@ input:focus {
   color: #ffffff;
 }
 
+.sidebar-dark .sidebar .nav .nav-item .nav-link i.menu-icon {
+  color: inherit;
+}
+
 .sidebar-dark .sidebar .nav .nav-item .nav-link i.menu-arrow:before {
   color: #ffffff;
 }
@@ -18710,12 +18719,12 @@ input:focus {
 
 .sidebar-dark .sidebar .nav .nav-item.active > .nav-link .menu-title,
 .sidebar-dark .sidebar .nav .nav-item.active > .nav-link i {
-  color: #c0bbbb;
+  color: #e15600;
 }
 
 .sidebar-dark .sidebar .nav:not(.sub-menu) > .nav-item:hover:not(.nav-profile) > .nav-link {
-  background: #493d5f;
-  color: #ffffff;
+  background: white;
+  color: #3a3f51;
 }
 
 .sidebar-dark .sidebar .nav.sub-menu .nav-item .nav-link {

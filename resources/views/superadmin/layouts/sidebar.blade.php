@@ -40,8 +40,25 @@
                 </div>
             </div>
         </div>
-
           </li>
+
+
+
+          <li class="nav-item">
+              <a class="nav-link disabled-link" href="#" style="color:#e15600;">
+                  <span class="menu-title" style="font-size: small; ">Menu</span> 
+              </a>    
+          </li>
+
+          <li class="nav-item">
+            <!-- @canany(['view-dashboard']) -->
+            <a class="nav-link" href="/">
+              <i class="fa fa-globe menu-icon"></i>
+              <span class="menu-title">Explore Site</span> 
+            </a>
+            <!-- @endcanany     -->
+          </li>
+
           <li class="nav-item">
             @canany(['view-dashboard'])
             <a class="nav-link" href="{{ route('superadmin.dashboard') }}">
@@ -51,7 +68,21 @@
             @endcanany    
           </li>
 
-          <br>
+          <li class="nav-item">
+            @canany(['view-notification', 'delete-notification'])
+              <a class="nav-link" href="{{ route('notifications.index') }}">
+                <i class="fas fa-bell menu-icon"></i>
+                <span class="menu-title">Notifications</span> 
+              </a>
+            @endcanany
+          </li>
+
+
+          <li class="nav-item">
+              <a class="nav-link disabled-link" href="#" style="color:#e15600;">
+                  <span class="menu-title" style="font-size: small; ">Authorization</span> 
+              </a>    
+          </li>
 
           <li class="nav-item">
           @canany(['create-permission', 'edit-permission', 'delete-permission'])
@@ -80,9 +111,15 @@
             @endcanany
           </li>
 
-          <br>
 
           <li class="nav-item">
+              <a class="nav-link disabled-link" href="#" style="color:#e15600;">
+                  <span class="menu-title" style="font-size: small; ">Engagement</span> 
+              </a>    
+          </li>
+
+
+            <li class="nav-item">
           @canany(['create-category', 'edit-category', 'delete-category'])
             <a class="nav-link" href="{{ route('categories.index') }}">
               <i class="fa fa-th-large menu-icon"></i>
@@ -91,17 +128,14 @@
             @endcanany
           </li>
 
-          <li class="nav-item">
-          @canany(['view-gallery'])
-            <a class="nav-link" href="{{ route('superadmin.gallery') }}">
-              <i class="fa fa-file-image menu-icon"></i>
-              <span class="menu-title">Gallery</span> 
+            <li class="nav-item">
+          @canany(['create-blog', 'edit-blog', 'delete-blog'])
+            <a class="nav-link" href="{{ route('blogs.index') }}">
+              <i class="fa fa-fire menu-icon"></i>
+              <span class="menu-title">Culture</span> 
             </a>
             @endcanany
           </li>
-
-          <br>
-
 
           <li class="nav-item">
           @canany(['create-post', 'edit-post', 'delete-post'])
@@ -129,26 +163,23 @@
             @endcanany
           </li>
 
-          
           <li class="nav-item">
-          @canany(['create-blog', 'edit-blog', 'delete-blog'])
-            <a class="nav-link" href="{{ route('blogs.index') }}">
-              <i class="fa fa-globe menu-icon"></i>
-              <span class="menu-title">Culture</span> 
+          @canany(['view-gallery'])
+            <a class="nav-link" href="{{ route('superadmin.gallery') }}">
+              <i class="fa fa-file-image menu-icon"></i>
+              <span class="menu-title">Gallery</span> 
             </a>
             @endcanany
           </li>
 
-          <br>
+
 
           <li class="nav-item">
-            @canany(['view-notification', 'delete-notification'])
-              <a class="nav-link" href="{{ route('notifications.index') }}">
-                <i class="fas fa-bell menu-icon"></i>
-                <span class="menu-title">Notifications</span> 
-              </a>
-            @endcanany
+              <a class="nav-link disabled-link" href="#" style="color:#e15600;">
+                  <span class="menu-title" style="font-size: small; ">Communication</span> 
+              </a>    
           </li>
+
 
           <li class="nav-item">
             @canany(['create-email', 'edit-email', 'delete-email'])
@@ -168,7 +199,48 @@
             @endcanany
           </li>
 
-          <br>
+ 
+          <li class="nav-item">
+              <a class="nav-link disabled-link" href="#" style="color:#e15600;">
+                  <span class="menu-title" style="font-size: small; ">Transaction</span> 
+              </a>    
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#payment" aria-expanded="false" aria-controls="apps">
+                <i class="fas fa-money-bill-alt menu-icon"></i>
+              <span class="menu-title">Payment</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="payment">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="#"> Manage </a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://m.gcash.com/gcash-login-web/index.html#/" target="_blank">GCash</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://payout.maya.ph/" target="_blank">Maya</a>
+                </li>
+              </ul>`
+            </div>
+          </li>
+
+
+            <li class="nav-item">
+            <!-- @canany(['create-event', 'edit-event', 'delete-event',]) -->
+              <a class="nav-link" href="#">
+                <i class="fa fa-briefcase menu-icon"></i>
+                <span class="menu-title">Hiring</span> 
+              </a>
+            <!-- @endcanany -->
+          </li>
+ 
+          <li class="nav-item">
+              <a class="nav-link disabled-link" href="#" style="color:#e15600;">
+                  <span class="menu-title" style="font-size: small; ">Planning</span> 
+              </a>    
+          </li>
 
           <li class="nav-item">
             @canany(['create-event', 'edit-event', 'delete-event',])
@@ -188,9 +260,6 @@
             @endcanany
           </li>
 
-
-
-          
           <!-- <li class="nav-item">
             <a class="nav-link" href="<?php echo url('melody')?>/pages/widgets.html">
               <i class="fa fa-puzzle-piece menu-icon"></i>
@@ -460,3 +529,21 @@
         </ul>
       </nav>
       <!-- partial -->
+
+
+<script>
+    // JavaScript to disable click on the link
+    document.querySelectorAll('.disabled-link').forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+        });
+    });
+</script>
+
+<style>
+  /* Add this CSS style to your stylesheet or within a <style> tag */
+  .nav-item .nav-link.disabled-link:hover {
+    background-color: transparent !important;
+  }
+
+</style>

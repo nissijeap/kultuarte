@@ -88,7 +88,7 @@
 
 </head>
 
-<body class="sidebar-icon-only">
+<body class="sidebar-icon-only sidebar-dark">
   <div class="container-scroller">
     @include('superadmin.layouts.navbar')
     <div class="container-fluid page-body-wrapper">

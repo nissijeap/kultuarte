@@ -25,7 +25,7 @@
   <link rel="shortcut icon" href="http://www.urbanui.com/" />
 </head>
 
-<body class="sidebar-icon-only">
+<body class="sidebar-icon-only sidebar-dark">
   <div class="container-scroller">
    
     @include('superadmin.layouts.navbar')
@@ -673,6 +673,7 @@
   <!-- Custom js for this page-->
   <script src="<?php echo url('melody')?>/js/dashboard.js"></script>
   <!-- End custom js for this page-->
+  
 
 </body>
 </html>

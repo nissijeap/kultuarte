@@ -25,7 +25,7 @@
 
 </head>
 
-<body class="sidebar-icon-only">
+<body class="sidebar-icon-only sidebar-dark">
     <div class="container-scroller">
         <!-- Include navbar and sidebar -->
         @include('superadmin.layouts.navbar')

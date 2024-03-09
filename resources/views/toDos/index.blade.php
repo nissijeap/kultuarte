@@ -25,7 +25,7 @@
 </head>
 
 <body>
-  <div class="container-scroller">
+  <div class="container-scroller sidebar-dark">
   @include('superadmin.layouts.navbar')
     <div class="container-fluid page-body-wrapper">
     @include('superadmin.layouts.settings')
