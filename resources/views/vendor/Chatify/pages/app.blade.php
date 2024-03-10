@@ -13,11 +13,11 @@
                         <div class="col-lg-8 post_container">
                             <div class="card d-flex w-100 shadow-xss rounded-xxl border-0 ps-3 pt-3 pe-3 pb-1 mb-3 mt-5">
                                 <div class="d-flex pb-2 messageList listHead">
-                                    <h5 class="mb-0 align-self-center" style="font-weight: bold;">Messages</h5>
+                                    <h3 class="mb-0 align-self-center" style="font-weight: bold;">Messages</h3>
                                     {{-- Search input --}}
                                     <div class="ms-auto d-flex w-50">
                                         <input type="text" class="messenger-search rounded-xxl d-none ms-auto" placeholder="Search" />
-                                        <span class="material-symbols-outlined align-self-center ms-auto" id="toggleSearch" style="cursor:pointer;">search</span>
+                                        <span class="material-symbols-outlined align-self-center ms-auto" id="toggleSearch" style="cursor:pointer; color: #e15600;">search</span>
                                     </div>
                                 </div>
                                 
@@ -105,7 +105,7 @@
                                     </nav>
                                     {!! view('Chatify::layouts.info')->render() !!}
                                 </div>
-                                <div class="messenger-infoView rounded-xxl d-flex justify-content-center align-items-center noView" style="flex-direction: column;">
+                                <div class="messenger-infoView rounded-xxl d-flex justify-content-center align-items-center noView" style="flex-direction: column; color: #e15600;">
                                         <span class="material-symbols-outlined" style="font-size: xxx-large;">highlight_mouse_cursor</span>
                                         <h5>Select a message to view</h5>
                                 </div>

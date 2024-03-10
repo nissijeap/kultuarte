@@ -18,7 +18,7 @@
                     <div class="row feed-body">
                         <div class="col-lg-8 post_container">
                             <div class="card w-100 shadow-xss rounded-xxl border-0 ps-3 pt-3 pe-3 pb-1 mb-3 mt-5">
-                                <h5 style="font-weight:bold !important;">Home</h5>
+                                <h3 style="font-weight:bold !important;">Home</h3>
                             </div>
 
                                 @forelse($posts as $post)
@@ -189,7 +189,7 @@
                                                                     @endif &#xb7 
                                                                 @if($comment->user->id === auth()->user()->id)
                                                                     <a href="#" class="font-xssss editComment" style="color: #e15600 !important;" data-comment-id="{{ $comment->id }}" data-comment-content="{{ $comment->comment }}">Edit</a> &#xb7
-                                                                    <a href="#" class="font-xssss deleteComment" style="color: #e15600 !important;" data-comment-id="{{ $comment->id }}">Delete</a>
+                                                                    <a href="#" class="font-xssss deleteComment" style="color: #e15600 !important;" data-comment-id="{{ $comment->id }}" data-post-id="{{ $post->id }}">Delete</a>
                                                                 @endif
                                                             </div>
                                                         @endif
@@ -214,7 +214,7 @@
                                                                     &#xb7
                                                                     @if($reply->user->id === auth()->user()->id) 
                                                                         <a href="#" class="font-xssss editComment" style="color: #e15600 !important;" data-comment-id="{{ $reply->id }}" data-comment-content="{{ $reply->comment }}">Edit</a> &#xb7
-                                                                        <a href="#" class="font-xssss deleteComment" style="color: #e15600 !important;" data-comment-id="{{ $reply->id }}">Delete</a>
+                                                                        <a href="#" class="font-xssss deleteComment" style="color: #e15600 !important;" data-comment-id="{{ $reply->id }}" data-post-id="{{ $post->id }}">Delete</a>
                                                                     @endif
                                                                     </div>
                                                                 </div>

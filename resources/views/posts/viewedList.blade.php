@@ -1,8 +1,8 @@
 <div class="card w-100 shadow-xss rounded-xxl border-0 mb-3 mt-5">
-    <div class="card-body d-flex align-items-center p-4">
+    <div class="card-body d-flex align-items-center p-4" style="color: #e15600;">
         <span class="material-symbols-outlined">visibility</span>
         <h4 class="fw-700 mb-0 font-xs text-grey-900">&nbsp;Recently Viewed</h4>
-        <a href="{{ route('show_view') }}" class="fw-600 ms-auto font-xssss text-primary" style="text-decoration:none;">See all</a>
+        <a href="{{ route('show_view') }}" class="fw-600 ms-auto font-xssss" style="text-decoration:none;">See all</a>
     </div>
     @forelse($views->take(3) as $viewed)
     <div class="card-body d-flex pt-4 ps-4 pe-4 pb-0 border-top-xs bor-0">

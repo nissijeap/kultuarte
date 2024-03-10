@@ -1,8 +1,8 @@
 <div class="card w-100 shadow-xss rounded-xxl border-0 mb-3">
-    <div class="card-body d-flex align-items-center p-4">
+    <div class="card-body d-flex align-items-center p-4" style="color: #e15600 !important;">
     <span class="material-symbols-outlined">bookmark</span>
-        <h4 class="fw-700 mb-0 font-xs text-grey-900">&nbsp;Saved</h4>
-        <a href="{{ route('show_saved') }}" class="fw-600 ms-auto font-xssss text-primary" style="text-decoration:none;">See all</a>
+        <h4 class="fw-700 mb-0 font-xs">&nbsp;Saved</h4>
+        <a href="{{ route('show_saved') }}" class="fw-600 ms-auto font-xssss" style="text-decoration:none;">See all</a>
     </div>
     @forelse($saves->take(2) as $saved)
     <div class="card-body d-flex pt-4 ps-4 pe-4 pb-0 border-top-xs bor-0">

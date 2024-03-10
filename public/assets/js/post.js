@@ -24,8 +24,8 @@ function updateShareButtonState() {
 
     // Check if the RdeleteReply is disabled
     if (shareButton.disabled) {
-        shareButton.style.backgroundColor = 'rgb(167, 164, 164)';
-        shareButton.style.color = 'rgb(114, 114, 114)';
+        shareButton.style.backgroundColor = 'rgba(239, 239, 239, 0.3)';
+        shareButton.style.color = 'rgba(16, 16, 16, 0.3)';
     } else {
         shareButton.style.backgroundColor = '#ffdb57';
         shareButton.style.color = 'black';
@@ -49,7 +49,7 @@ function updateCommentButtonState() {
 
     // Check if the button is disabled
     if (sendButton.disabled) {
-        sendButton.style.color = 'rgb(167, 164, 164)';
+        sendButton.style.color = 'rgba(16, 16, 16, 0.3)';
     } else {
         sendButton.style.color = '#e15600';
     }
@@ -72,7 +72,7 @@ function updateReplyButtonState() {
 
     // Check if the button is disabled
     if (sendButton.disabled) {
-        sendButton.style.color = 'rgb(167, 164, 164)';
+        sendButton.style.color = 'rgba(16, 16, 16, 0.3)';
     } else {
         sendButton.style.color = '#e15600';
     }
@@ -416,7 +416,8 @@ document.querySelectorAll('.sendReply').forEach(function (send) {
 document.querySelectorAll('.deleteComment').forEach(function (deleteComment) {
     deleteComment.addEventListener('click', function () {
         var id = deleteComment.getAttribute('data-comment-id');
-        console.log(id);
+        var post_id = deleteComment.getAttribute('data-post-id');
+        console.log(id, post_id);
 
         $.ajax({
             method: 'POST',
@@ -429,6 +430,11 @@ document.querySelectorAll('.deleteComment').forEach(function (deleteComment) {
                 // Handle success
                 console.log('Deleted successfully');
                 $('#delComment-' + id).remove();
+                var count = $('#commentCount-' + post_id).text();
+                console.log('#delComment-' + post_id, '#commentCount-' + post_id);
+                count = parseInt(count) - 1;
+                
+                $('#commentCount-' + post_id).text(count);
             },
             error: function (error) {
                 // Handle error

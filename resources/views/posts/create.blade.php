@@ -19,7 +19,7 @@
                         @if (Auth::user()->hasRole('Super Admin'))
                             <div class="col-lg-8 mb-4">
                                 <div class="card w-100 shadow-xss rounded-xxl border-0 ps-3 pt-3 pe-3 pb-1 mb-3 mt-5">
-                                    <h5 style="font-weight:bold !important;">Share your hidden gem</h5>
+                                    <h3 style="font-weight:bold !important;">Share your hidden gem</h3>
                                 </div>
 
                                 <div class="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-0">
@@ -48,7 +48,7 @@
                         @if (Auth::user()->hasRole('Admin'))
                             <div class="col-lg-8 mb-4">
                                 <div class="card w-100 shadow-xss rounded-xxl border-0 ps-3 pt-3 pe-3 pb-1 mb-3 mt-5">
-                                    <h5 style="font-weight:bold !important;">Share your culture</h5>
+                                    <h3 style="font-weight:bold !important;">Share your culture</h3>
                                 </div>
 
                                 <div class="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-0">
