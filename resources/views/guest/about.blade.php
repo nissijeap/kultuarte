@@ -151,6 +151,7 @@
         </div>
 
         <div class="row gy-4">
+
           <div class="col-lg-4 col-md-6">
             <div class="member">
               <img src="{{url('guest/assets/img/profile/tina.jpg')}}">
@@ -158,6 +159,23 @@
               <span>Full Stack Developer</span>
               <p>
                 Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui
+              </p>
+              <div class="social-about">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="member">
+              <img src="{{url('guest/assets/img/profile/nissi.jpg')}}" alt="">
+              <h4>Nissi Jea Paglinawan</h4>
+              <span>Full Stack Developer</span>
+              <p>
+                Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
               </p>
               <div class="social-about">
                 <a href=""><i class="bi bi-twitter"></i></a>
@@ -185,22 +203,6 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="member">
-              <img src="{{url('guest/assets/img/profile/nissi.jpg')}}" alt="">
-              <h4>Nissi Jea Paglinawan</h4>
-              <span>Full Stack Developer</span>
-              <p>
-                Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
-              </p>
-              <div class="social-about">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

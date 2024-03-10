@@ -1,4 +1,4 @@
-@extends('guest.culture_layout.app')
+@extends('guest.sublayout.app')
 
 @section('content')
 
@@ -6,10 +6,10 @@
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs d-flex align-items-center">
       <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
-            <h2>People</h2>
+            <h2>Art Organization</h2>
             <ol>
-            <li><a href="">Culture</a></li>
-            <li>People</li>
+            <li><a href="">Arts</a></li>
+            <li>Art Organization</li>
             </ol>
       </div>
     </div>

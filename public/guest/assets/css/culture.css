@@ -328,6 +328,96 @@ section {
 /* people page ends here */
 
 
+/* events starts here */
+
+.post-entry-2 { margin-bottom: 30px; }
+
+.post-entry-2 .post-meta,
+.post-entry-1 .post-meta {
+    font-size: 11px;
+    letter-spacing: 0.07rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+    color: rgba(0, 0 , 0, 0.4);
+    margin-bottom: 10px;
+}
+
+.post-entry-2 .author,
+.post-entry-1 .author {
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+    font-family: 'Nunito', sans-serif;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.post-entry-2 .thumbnail { flex: 0 0 65%; }
+
+@media (max-width: 960px) {
+.post-entry-2 .thumbnail {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+}
+}
+
+.post-entry-2.half .thumbnail { flex: 0 0 50%; }
+
+@media (max-width: 768px) {
+.post-entry-2.half .thumbnail {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+}
+}
+
+.post-entry-2.small-img .thumbnail { flex: 0 0 30%; }
+
+@media (max-width: 768px) {
+.post-entry-2.small-img .thumbnail {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+}
+}
+
+.author .photo { margin-right: 10px; }
+
+.author .photo img {
+    width: 40px;
+    border-radius: 50%;
+    margin-bottom: 0;
+}
+
+.author .name h3 {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.post-entry-1 { margin-bottom: 30px; }
+.post-entry-1 img { margin-bottom: 30px; }
+
+.post-entry-1 h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.post-entry-1 h2 a { color: #000; }
+
+.post-entry-1.lg h2 {
+    font-size: 40px;
+    line-height: 1;
+}
+
+/* events ends here */
+
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/

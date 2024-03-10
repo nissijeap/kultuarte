@@ -1,5 +1,6 @@
 @extends('guest.general_layouts.app')
 
+<!-- head starts here -->
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -27,6 +28,7 @@
   <!-- Template Main CSS File -->
   <link href="{{url('guest/assets/css/guest.css')}}" rel="stylesheet">
 </head>
+<!-- head ends here -->
 
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top d-flex align-items-center header-transparent">
@@ -68,7 +70,6 @@
 </header>
 <!-- End Header -->
 
-
 @section('content')
 
 <main id="main">
@@ -87,191 +88,181 @@
     <!-- End Breadcrumbs -->
 
     <section>
-      <div class="container" data-aos="fade-up">
+        <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Nesciunt accusantium fuga magni consequuntur nulla!
-                Omnis dolorem sint consequuntur quis cupiditate, fugiat
-                delectus repellat sequi ullam corrupti ipsam. Dolores,
-                doloribus maxime illo tempore vitae neque, labore atque iure
-                tenetur modi aspernatur nisi, nihil obcaecati commodi.
-                Iste expedita consequuntur quibusdam dolorem! Libero.
-            </p>
-        </div>
+            <div class="section-title">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Nesciunt accusantium fuga magni consequuntur nulla!
+                    Omnis dolorem sint consequuntur quis cupiditate, fugiat
+                    delectus repellat sequi ullam corrupti ipsam. Dolores,
+                    doloribus maxime illo tempore vitae neque, labore atque iure
+                    tenetur modi aspernatur nisi, nihil obcaecati commodi.
+                    Iste expedita consequuntur quibusdam dolorem! Libero.
+                </p>
+            </div>
 
-        <!-- Blog Section - Blog Page -->
-        <section id="blog" class="blog">
+            <!-- Blog Section - Blog Page -->
+            <div id="blog" class="blog">
 
-<div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-  <div class="row gy-4 posts-list">
+                    <div class="row gy-4 posts-list">
 
-    <div class="col-xl-4 col-lg-6">
-      <article>
+                        <div class="col-xl-4 col-lg-6">
+                            <article>
+                                <div class="post-img">
+                                    <img src="{{url('guest/assets/img/events/gen-events/blog-2.jpg')}}" class="img-fluid">
+                                </div>
 
-        <div class="post-img">
-          <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-        </div>
+                                <p class="post-category">Annual Events</p>
 
-        <p class="post-category">Politics</p>
+                                <h2 class="title">
+                                <a href="">Dolorum optio tempore voluptas dignissimos</a>
+                                </h2>
 
-        <h2 class="title">
-          <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-        </h2>
+                                <div class="d-flex align-items-center">
+                                    <img src="{{url('guest/assets/img/events/authors/author-1.jpg')}}" class="img-fluid post-author-img flex-shrink-0">
+                                    <div class="post-meta">
+                                        <p class="post-author">Maria Doe</p>
+                                        <p class="post-date">
+                                            <time datetime="2022-01-01">Jan 1, 2022</time>
+                                        </p>
+                                    </div>
+                                </div>
 
-        <div class="d-flex align-items-center">
-          <img src="assets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-          <div class="post-meta">
-            <p class="post-author">Maria Doe</p>
-            <p class="post-date">
-              <time datetime="2022-01-01">Jan 1, 2022</time>
-            </p>
-          </div>
-        </div>
+                            </article>
+                        </div>
 
-      </article>
-    </div><!-- End post list item -->
+                        <div class="col-xl-4 col-lg-6">
+                            <article>
+                                <div class="post-img">
+                                    <img src="{{url('guest/assets/img/events/gen-events/blog-1.jpg')}}" class="img-fluid">
+                                </div>
 
-    <div class="col-xl-4 col-lg-6">
-      <article>
+                                <p class="post-category">Public Installation</p>
 
-        <div class="post-img">
-          <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
-        </div>
+                                <h2 class="title">
+                                <a href="">Dolorum optio tempore voluptas dignissimos</a>
+                                </h2>
 
-        <p class="post-category">Sports</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="{{url('guest/assets/img/events/authors/author-2.jpg')}}" class="img-fluid post-author-img flex-shrink-0">
+                                    <div class="post-meta">
+                                        <p class="post-author">Maria Doe</p>
+                                        <p class="post-date">
+                                            <time datetime="2022-01-01">Jan 1, 2022</time>
+                                        </p>
+                                    </div>
+                                </div>
 
-        <h2 class="title">
-          <a href="blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a>
-        </h2>
+                            </article>
+                        </div>
 
-        <div class="d-flex align-items-center">
-          <img src="assets/img/blog/blog-author-2.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-          <div class="post-meta">
-            <p class="post-author">Allisa Mayer</p>
-            <p class="post-date">
-              <time datetime="2022-01-01">Jun 5, 2022</time>
-            </p>
-          </div>
-        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <article>
+                                <div class="post-img">
+                                    <img src="{{url('guest/assets/img/events/gen-events/blog-3.jpg')}}" class="img-fluid">
+                                </div>
 
-      </article>
-    </div><!-- End post list item -->
+                                <p class="post-category">Upcoming Events</p>
 
-    <div class="col-xl-4 col-lg-6">
-      <article>
+                                <h2 class="title">
+                                <a href="">Dolorum optio tempore voluptas dignissimos</a>
+                                </h2>
 
-        <div class="post-img">
-          <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
-        </div>
+                                <div class="d-flex align-items-center">
+                                    <img src="{{url('guest/assets/img/events/authors/author-3.jpg')}}" class="img-fluid post-author-img flex-shrink-0">
+                                    <div class="post-meta">
+                                        <p class="post-author">Maria Doe</p>
+                                        <p class="post-date">
+                                            <time datetime="2022-01-01">Jan 1, 2022</time>
+                                        </p>
+                                    </div>
+                                </div>
 
-        <p class="post-category">Entertainment</p>
+                            </article>
+                        </div>
 
-        <h2 class="title">
-          <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
-        </h2>
+                        <div class="col-xl-4 col-lg-6">
+                            <article>
+                                <div class="post-img">
+                                    <img src="{{url('guest/assets/img/events/gen-events/blog-4.jpg')}}" class="img-fluid">
+                                </div>
 
-        <div class="d-flex align-items-center">
-          <img src="assets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-          <div class="post-meta">
-            <p class="post-author">Mark Dower</p>
-            <p class="post-date">
-              <time datetime="2022-01-01">Jun 22, 2022</time>
-            </p>
-          </div>
-        </div>
+                                <p class="post-category">Upcoming Events</p>
 
-      </article>
-    </div><!-- End post list item -->
+                                <h2 class="title">
+                                <a href="">Dolorum optio tempore voluptas dignissimos</a>
+                                </h2>
 
-    <div class="col-xl-4 col-lg-6">
-      <article>
+                                <div class="d-flex align-items-center">
+                                    <img src="{{url('guest/assets/img/events/authors/author-4.jpg')}}" class="img-fluid post-author-img flex-shrink-0">
+                                    <div class="post-meta">
+                                        <p class="post-author">Maria Doe</p>
+                                        <p class="post-date">
+                                            <time datetime="2022-01-01">Jan 1, 2022</time>
+                                        </p>
+                                    </div>
+                                </div>
 
-        <div class="post-img">
-          <img src="assets/img/blog/blog-4.jpg" alt="" class="img-fluid">
-        </div>
+                            </article>
+                        </div>
 
-        <p class="post-category">Sports</p>
+                        <div class="col-xl-4 col-lg-6">
+                            <article>
+                                <div class="post-img">
+                                    <img src="{{url('guest/assets/img/events/gen-events/blog-5.jpg')}}" class="img-fluid">
+                                </div>
 
-        <h2 class="title">
-          <a href="blog-details.html">Non rem rerum nam cum quo minus olor distincti</a>
-        </h2>
+                                <p class="post-category">Cultural Events</p>
 
-        <div class="d-flex align-items-center">
-          <img src="assets/img/blog/blog-author-4.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-          <div class="post-meta">
-            <p class="post-author">Lisa Neymar</p>
-            <p class="post-date">
-              <time datetime="2022-01-01">Jun 30, 2022</time>
-            </p>
-          </div>
-        </div>
+                                <h2 class="title">
+                                <a href="">Dolorum optio tempore voluptas dignissimos</a>
+                                </h2>
 
-      </article>
-    </div><!-- End post list item -->
+                                <div class="d-flex align-items-center">
+                                    <img src="{{url('guest/assets/img/events/authors/author-5.jpg')}}" class="img-fluid post-author-img flex-shrink-0">
+                                    <div class="post-meta">
+                                        <p class="post-author">Maria Doe</p>
+                                        <p class="post-date">
+                                            <time datetime="2022-01-01">Jan 1, 2022</time>
+                                        </p>
+                                    </div>
+                                </div>
 
-    <div class="col-xl-4 col-lg-6">
-      <article>
+                            </article>
+                        </div>
 
-        <div class="post-img">
-          <img src="assets/img/blog/blog-5.jpg" alt="" class="img-fluid">
-        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <article>
+                                <div class="post-img">
+                                    <img src="{{url('guest/assets/img/events/gen-events/blog-6.jpg')}}" class="img-fluid">
+                                </div>
 
-        <p class="post-category">Politics</p>
+                                <p class="post-category">Cultural Events</p>
 
-        <h2 class="title">
-          <a href="blog-details.html">Accusamus quaerat aliquam qui debitis facilis consequatur</a>
-        </h2>
+                                <h2 class="title">
+                                <a href="">Dolorum optio tempore voluptas dignissimos</a>
+                                </h2>
 
-        <div class="d-flex align-items-center">
-          <img src="assets/img/blog/blog-author-5.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-          <div class="post-meta">
-            <p class="post-author">Denis Peterson</p>
-            <p class="post-date">
-              <time datetime="2022-01-01">Jan 30, 2022</time>
-            </p>
-          </div>
-        </div>
+                                <div class="d-flex align-items-center">
+                                    <img src="{{url('guest/assets/img/events/authors/author-6.jpg')}}" class="img-fluid post-author-img flex-shrink-0">
+                                    <div class="post-meta">
+                                        <p class="post-author">Maria Doe</p>
+                                        <p class="post-date">
+                                            <time datetime="2022-01-01">Jan 1, 2022</time>
+                                        </p>
+                                    </div>
+                                </div>
 
-      </article>
-    </div><!-- End post list item -->
-
-    <div class="col-xl-4 col-lg-6">
-      <article>
-
-        <div class="post-img">
-          <img src="assets/img/blog/blog-6.jpg" alt="" class="img-fluid">
-        </div>
-
-        <p class="post-category">Entertainment</p>
-
-        <h2 class="title">
-          <a href="blog-details.html">Distinctio provident quibusdam numquam aperiam aut</a>
-        </h2>
-
-        <div class="d-flex align-items-center">
-          <img src="assets/img/blog/blog-author-6.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-          <div class="post-meta">
-            <p class="post-author">Mika Lendon</p>
-            <p class="post-date">
-              <time datetime="2022-01-01">Feb 14, 2022</time>
-            </p>
-          </div>
-        </div>
-
-      </article>
-    </div><!-- End post list item -->
-
-  </div><!-- End blog posts list -->
-
-</div>
-
-</section>
-<!-- End Blog Section -->
-
-
+                            </article>
+                        </div>
+                        <!-- End post list item -->
+                    </div>
+                </div>
+            </div>
+            <!-- End Blog Section -->
       </div>
     </section>
 </main>
