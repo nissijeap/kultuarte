@@ -6,6 +6,18 @@
 @import url(../vendor/owl-carousel/css/owl.carousel.min.css);
 @import url(../vendor/owl-carousel/css/owl.theme.default.css);
 
+.tox{
+    height: 500px !important;
+}
+
+.tox-silver-sink{
+    display: none !important;
+}
+
+.material-symbols-outlined{
+    color: #e15600;
+}
+
 .auto-resize-textarea, .comment-textarea {
     width: 100%;
     height:40px;
@@ -1874,8 +1886,9 @@ pre code {
 
 code {
     font-size: .875em;
-    color: #d63384;
-    word-wrap: break-word
+    color: #e15600;
+    word-wrap: break-word;
+    font-weight: bold;
 }
 
 a>code {

@@ -14,10 +14,10 @@ class RoleSeeder extends Seeder
     public function run(): void
     {
         Role::create(['name' => 'Super Admin']);
-        $admin = Role::create(['name' => 'Admin']);
-        $productManager = Role::create(['name' => 'Product Manager']);
+        $artist = Role::create(['name' => 'Artist']);
+        $cultural_organization = Role::create(['name' => 'Cultural Organization']);
 
-        $admin->givePermissionTo([
+        $artist->givePermissionTo([
             'create-user',
             'edit-user',
             'delete-user',
@@ -26,7 +26,7 @@ class RoleSeeder extends Seeder
             'delete-product'
         ]);
 
-        $productManager->givePermissionTo([
+        $cultural_organization->givePermissionTo([
             'create-product',
             'edit-product',
             'delete-product'

@@ -1,12 +1,12 @@
 <div class="modal fade bs-example-modal-center" id="postModal{{ $post->id }}" data-post-id="{{ $post->id }}" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal-content rounded-xxl">
             <div class="modal-header">
                 <h5 class="modal-title">Edit Post</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="w-100 rounded-xxl border-0 mb-0">
+                <div class="w-100 rounded-xxl border-0 mb-0 p-3">
                         <div class="card-body p-0 mt-1 mb-3 position-relative" style="border: 1px gray !important; border-radius:15px !important; background: white !important;">
                             <figure class="avatar position-absolute ms-2 mt-1 top-5"><img src="{{ asset('assets/images/profile-4.png') }}" alt="image" class="shadow-sm rounded-circle w30"></figure>
                             <input type="hidden" id="post_id-{{ $post->id }}" name="post_id" value="{{ $post->id }}">
@@ -54,7 +54,7 @@
                         </div>
                         <div class="card-body d-flex p-0 mt-0">
                             <p id="photoUp-{{ $post->id }}" class="d-flex align-items-center font-xssss fw-600 ls-1 text-grey-700 text-dark pe-4 cursor-pointer"><i class="font-md text-success feather-image me-2"></i><span class="d-none-xs">Photo/Video</span></p>
-                            <button id="updateButton-{{ $post->id }}" type="button" class="ms-auto p-2 lh-20 w100 me-2 text-center font-xss fw-600 ls-1 rounded-xl" style="border:none; background-color:#ffdb57;">UPDATE</button>
+                            <button id="updateButton-{{ $post->id }}" type="button" class="ms-auto p-2 lh-20 w100 me-2 text-center font-xss text-white fw-600 ls-1 rounded-xl" style="border:none; background-color:#e15600;">UPDATE</button>
                         </div>
                 </div>
             </div>

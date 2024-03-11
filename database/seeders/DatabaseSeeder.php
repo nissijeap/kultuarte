@@ -16,6 +16,8 @@ class DatabaseSeeder extends Seeder
             PermissionSeeder::class,
             RoleSeeder::class,
             SuperAdminSeeder::class,
+            PostCategoriesSeeder::class,
+            EthnicGroupsSeeder::class,
         ]);
     }
 }

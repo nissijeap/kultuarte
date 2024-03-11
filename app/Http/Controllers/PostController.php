@@ -25,10 +25,15 @@ class PostController extends Controller
         ]);
     }
     public function postCreate() {
-        return view('posts.create',[
-            'saves' => Saved::where('user_id', '=', auth()->user()->id)->latest()->get(),
-            'views' => Recently_Viewed::where('user_id', '=', auth()->user()->id)->latest()->get(),
-        ]);
+        if (auth()->user()->hasRole('Cultural Organization')){
+            return view('blogs.create');
+        } else if (auth()->user()->hasRole('Artist')){
+            return view('posts.create',[
+                'saves' => Saved::where('user_id', '=', auth()->user()->id)->latest()->get(),
+                'views' => Recently_Viewed::where('user_id', '=', auth()->user()->id)->latest()->get(),
+            ]);
+        }
+        
     }
 
     public function store(Request $request) {

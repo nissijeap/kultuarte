@@ -20,7 +20,7 @@
                             <li><a href="{{ route('chatify') }}" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">chat</span></a></li>
                             <li><a href="{{ route('postCreate') }}" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">add_circle</span></a></li>
                             <li><a href="{{ route('arts') }}" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">palette</span></a></li>
-                            <li><a href="default-live-stream.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">newsmode</span></a></li>
+                            <li><a href="{{ route('blogs') }}" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">newsmode</span></a></li>
                             <li><a href="default-live-stream.html" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined">settings</span></a></li>
                             <li><a href="" class="nav-content-bttn open-font icons"><span class="font-xl text-current material-symbols-outlined" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">power_settings_new</span></a></li>
                             <li class="logo d-none d-xl-block d-lg-block"></li>

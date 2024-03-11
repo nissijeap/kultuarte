@@ -27,11 +27,12 @@ function updateShareButtonState() {
         shareButton.style.backgroundColor = 'rgba(239, 239, 239, 0.3)';
         shareButton.style.color = 'rgba(16, 16, 16, 0.3)';
     } else {
-        shareButton.style.backgroundColor = '#ffdb57';
-        shareButton.style.color = 'black';
+        shareButton.style.backgroundColor = '#e15600';
+        shareButton.style.color = 'white';
     }
 
 }
+
 document.addEventListener('DOMContentLoaded', function () {
     var commentTextAreas = document.querySelectorAll('.comment-textarea');
     commentTextAreas.forEach(function (commentTextAreas) {
@@ -152,6 +153,7 @@ function storePost() {
                     title: "Posted Successfully",
                     showConfirmButton: false,
                     timer: 1500,
+                    iconColor: '#fcc309',
                 });
                 $('textarea').val('');
                 var dropzone = Dropzone.forElement("#dropzone");
@@ -167,6 +169,7 @@ function storePost() {
                     title: "That did not work, please add a caption",
                     showConfirmButton: false,
                     timer: 1500,
+                    iconColor: '#e15600',
                 });
             }
         });
@@ -256,6 +259,7 @@ function updatePost(id) {
                     title: "Updated Successfully",
                     showConfirmButton: false,
                     timer: 1500,
+                    iconColor: '#fcc309',
                 }).then(() => {
                     location.reload();
                 });
@@ -269,6 +273,7 @@ function updatePost(id) {
                     title: "That did not work, please add a caption",
                     showConfirmButton: false,
                     timer: 1500,
+                    iconColor: '#e15600',
                 });
             }
         });

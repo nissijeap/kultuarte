@@ -49,6 +49,7 @@
     <script src="{{ asset('assets/js/post.js') }}" type="text/javascript"></script>
     <script src="{{ asset('assets/js/home.js') }}" type="text/javascript"></script>
     <script src="{{ asset('assets/js/comment.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/js/plugin.js') }}"></script>
 
     <script src="{{ asset('assets/js/lightbox.js') }}"></script>
     <script src="{{ asset('assets/js/scripts.js') }}"></script>

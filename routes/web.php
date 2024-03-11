@@ -10,6 +10,7 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\SaveController;
 use App\Http\Controllers\RecentlyViewedController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,10 @@ Route::post('/store', [PostController::class, 'store'])->name('store');
 Route::post('/update', [PostController::class, 'update'])->name('update');
 Route::delete('/destroy/{post}', [PostController::class, 'destroy'])->name('destroy');
 Route::post('/destroyImg', [PostController::class, 'destroyImg'])->name('destroyImg');
+
+Route::post('/storeBlog', [BlogController::class, 'storeBlog'])->name('storeBlog');
+Route::get('/blogs', [BlogController::class, 'blogs'])->name('blogs');
+Route::get('/showBlogs/{blog}', [BlogController::class, 'showBlogs'])->name('showBlogs');
 
 Route::post('/like', [LikeController::class, 'like'])->name('like');
 Route::post('/unlike', [LikeController::class, 'unlike'])->name('unlike');
