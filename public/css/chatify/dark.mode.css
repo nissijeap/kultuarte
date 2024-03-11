@@ -45,6 +45,9 @@
 /* .m-header-messaging {
   background: var(--dark-primary-bg-color);
 } */
+.m-header-messaging {
+  background: var(--dark-primary-bg-color);
+}
 .messenger-infoView {
   background: var(--dark-primary-bg-color);
   border: 1px solid var(--dark-border-color);

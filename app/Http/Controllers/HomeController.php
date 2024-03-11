@@ -27,11 +27,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home', [
-            'posts' => Post::latest()->get(),
-            'medias' => Media::latest()->get(),
-            'saves' => Saved::where('user_id', '=', auth()->user()->id)->latest()->get(),
-            'views' => Recently_Viewed::where('user_id', '=', auth()->user()->id)->latest()->get(),
-        ]);
+        if(auth()->user()->hasRole('Super Admin')){
+            return view('posts.home');
+        } else {
+            return view('home', [
+                'posts' => Post::latest()->get(),
+                'medias' => Media::latest()->get(),
+                'saves' => Saved::where('user_id', '=', auth()->user()->id)->latest()->get(),
+                'views' => Recently_Viewed::where('user_id', '=', auth()->user()->id)->latest()->get(),
+            ]);
+        }
+        
     }
 }

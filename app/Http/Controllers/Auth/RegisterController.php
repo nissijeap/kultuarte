@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -64,10 +65,30 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        // Assign the role "Guest" to the newly created user
+        $user->assignRole('Guest');
+
+        // Return the created user
+        return $user;
+    }
+
+    protected function registered(Request $request, $user)
+    {
+        // Logout the user after registration
+        $this->guard()->logout();
+
+        // Redirect to the login page
+        return redirect($this->loginPath())->with('success', 'Registration submitted! Please wait for approval. You will be notified via email.');
+    }
+
+    public function loginPath()
+    {
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : RouteServiceProvider::HOME;
     }
 }

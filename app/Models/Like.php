@@ -9,15 +9,25 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Like extends Model
 {
     use HasFactory;
-    use SoftDeletes;
-    use \Askedio\SoftCascade\Traits\SoftCascadeTrait;
+
     protected $fillable = [
+        'user_id',
         'post_id',
-        'user_id'
+        'blog_id',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+    
     public function post()
     {
-        return $this->belongsTo(Like::class, 'post_id');
+        return $this->belongsTo(Post::class, 'post_id');
+    }
+
+    public function blog()
+    {
+        return $this->belongsTo(Blog::class, 'blog_id');
     }
 }

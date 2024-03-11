@@ -48,4 +48,10 @@ class Post extends Model
     {
         return $this->hasMany(Comment::class, 'post_id', 'id');
     }
+    
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+
 }

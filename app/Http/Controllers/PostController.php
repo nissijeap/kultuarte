@@ -11,10 +11,49 @@ use App\Models\Like;
 use App\Models\Media;
 use App\Models\Saved;
 use App\Models\Recently_Viewed;
+use App\Models\User;
+use App\Models\Category;
 
 class PostController extends Controller
 {
     use SoftDeletes;
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:create-post|edit-post|delete-post', ['only' => ['index', 'show']]);
+        $this->middleware('permission:create-post', ['only' => ['create', 'store']]);
+        $this->middleware('permission:edit-post', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:delete-post', ['only' => ['destroy']]);
+    }
+
+    public function index()
+    {
+        $posts = Post::all();
+
+        return view('posts.index', compact('posts'));
+    }
+
+    public function exhibits()
+    {
+        $posts = Post::all();
+
+        return view('posts.exhibits', compact('posts'));
+    }
+
+    public function artists()
+    {
+        $posts = Post::all();
+
+        return view('posts.artists', compact('posts'));
+    }
+
+    public function transactions()
+    {
+        $posts = Post::all();
+
+        return view('posts.transactions', compact('posts'));
+    }
+
     public function arts()
     {
         return view('arts', [
@@ -24,6 +63,13 @@ class PostController extends Controller
             'views' => Recently_Viewed::where('user_id', '=', auth()->user()->id)->latest()->get(),
         ]);
     }
+
+    public function create() 
+    {
+        $posts = Post::all();
+        return view('posts.create', compact('posts'));
+    }
+
     public function postCreate() {
         if (auth()->user()->hasRole('Cultural Organization')){
             return view('blogs.create');
@@ -64,9 +110,6 @@ class PostController extends Controller
                     // Assign values to the Media instance
                     $newMedia->post_id = $post->id;
                     $newMedia->media = 'medias/' . $mediaName;
-    
-                    // Save the Media instance to the database
-                    $newMedia->save();
                 }
             }
         }

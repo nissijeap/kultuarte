@@ -59,6 +59,10 @@
 .exit{
     position: absolute;
     top: 50%;
+}
+.exit{
+    position: absolute;
+    top: 35%;
     right: 6%;
     color: rgb(167, 164, 164);
     display:none;
@@ -205,6 +209,10 @@
 .icons{
     text-decoration:none !important;
     margin-bottom:17px !important;
+}
+
+.text-current {
+    color: var(--theme-color) !important
 }
 
 .text-red {
@@ -742,7 +750,7 @@
 }
 
 .h200 {
-    height: 207px !important
+    height: 200px !important
 }
 
 .h240 {
@@ -2299,6 +2307,7 @@ progress {
     --bs-gutter-x: 30px;
     --bs-gutter-y: 0;
     display: flex;
+    /* flex-wrap: wrap; */
     margin-top: calc(var(--bs-gutter-y) * -1);
     margin-right: calc(var(--bs-gutter-x)/ -2);
     margin-left: calc(var(--bs-gutter-x)/ -2)
@@ -16485,6 +16494,10 @@ select.sort {
     .emoji-wrap li i {
         font-size: 20px
     }
+}
+
+.video-js {
+    padding-top: 56.25% !important
 }
 
 .vjs-poster {

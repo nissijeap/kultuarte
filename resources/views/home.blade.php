@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    
     <div class="preloader"></div>
 
     
@@ -257,20 +258,21 @@
             </div>            
         </div>
         <!-- main content -->     
-<script>
-    var like= "{{ route('like') }}";
-    var unlike= "{{ route('unlike') }}";
-    var commentRoute= "{{ route('comment') }}";
-    var delComment= "{{ route('deleteComment') }}";
-    var editComment= "{{ route('editComment') }}";
-    var upvoteRoute= "{{ route('upvote') }}";
-    var save= "{{ route('save') }}";
-    var update= "{{ route('update') }}";
-    var unsave= "{{ route('unsave') }}";
-    var destroyImg= "{{ route('destroyImg') }}";
-    var viewed= "{{ route('viewed') }}";
-    var user_id = "{{ auth()->user()->id }}";
-    var assetBaseUrl = '{{ asset('') }}';
-</script>
+    <script>
+        var like= "{{ route('like') }}";
+        var unlike= "{{ route('unlike') }}";
+        var commentRoute= "{{ route('comment') }}";
+        var delComment= "{{ route('deleteComment') }}";
+        var editComment= "{{ route('editComment') }}";
+        var upvoteRoute= "{{ route('upvote') }}";
+        var save= "{{ route('save') }}";
+        var update= "{{ route('update') }}";
+        var unsave= "{{ route('unsave') }}";
+        var destroyImg= "{{ route('destroyImg') }}";
+        var viewed= "{{ route('viewed') }}";
+        var user_id = "{{ auth()->user()->id }}";
+        var assetBaseUrl = '{{ asset('') }}';
+    </script>
+
 
 @endsection
