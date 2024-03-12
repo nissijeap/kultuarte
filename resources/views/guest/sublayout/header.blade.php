@@ -4,8 +4,6 @@
 
       <div id="logo">
         <a href="{{url('/')}}"><img src="{{url('guest/assets/img/logo-header.png')}}"></a>
-        <!-- Uncomment below if you prefer to use a text logo -->
-        <!--<h1><a href="index.html">Regna</a></h1>-->
       </div>
 
       <nav id="navbar" class="navbar">
@@ -23,18 +21,22 @@
                 </li>
                 <li class="dropdown"><a href="#"><span>Culture</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="{{url('culture/people')}}">People</a></li>
-                        <li><a href="{{url('culture/places')}}">Places</a></li>
-                        <li><a href="{{url('culture/cultural_events')}}">Cultural Events</a></li>
-                        <li><a href="{{url('culture/annual_events')}}">Annual Events</a></li>
+                    <li><a href="{{url('culture/people')}}">People</a></li>
+                    <li><a href="{{url('culture/places')}}">Places</a></li>
+                    <li><a href="{{url('culture/cultural_events')}}">Cultural Events</a></li>
+                    <li><a href="{{url('culture/annual_events')}}">Annual Events</a></li>
                     </ul>
                 </li>
                 <li><a class="nav-link scrollto" href="{{url('contact')}}">Contact Us</a></li>
+                <li><a href="{{ route('login') }}" class="nav-link scrollto link-login">Sign In</a></li>
             </ul>
+
       </nav>
       <!-- .navbar -->
 
       <a href="{{ route('login') }}" class="btn-get-login">Sign In</a>
-      <i class="bi bi-list mobile-nav-toggle"></i>
+      <i class="bx bxs-grid-alt mobile-nav-toggle"></i>
+      
     </div>
-  </header><!-- End Header -->
+</header
+><!-- End Header -->

@@ -58,15 +58,18 @@
                     </ul>
                 </li>
                 <li><a class="nav-link scrollto active" href="{{url('contact')}}">Contact Us</a></li>
+                <li><a href="{{ route('login') }}" class="nav-link scrollto link-login">Sign In</a></li>
             </ul>
+
       </nav>
       <!-- .navbar -->
 
       <a href="{{ route('login') }}" class="btn-get-login">Sign In</a>
-      <i class="bi bi-list mobile-nav-toggle"></i>
+      <i class="bx bxs-grid-alt mobile-nav-toggle"></i>
+      
     </div>
-</header>
-<!-- End Header -->
+</header
+><!-- End Header -->
 
 @section('content')
 
@@ -91,13 +94,11 @@
 
         <div class="section-title">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Nesciunt accusantium fuga magni consequuntur nulla!
-                Omnis dolorem sint consequuntur quis cupiditate, fugiat
-                delectus repellat sequi ullam corrupti ipsam. Dolores,
-                doloribus maxime illo tempore vitae neque, labore atque iure
-                tenetur modi aspernatur nisi, nihil obcaecati commodi.
-                Iste expedita consequuntur quibusdam dolorem! Libero.
+                We're here to assist you! Whether you have a question, feedback, or just want to say hello, 
+                we're ready to connect. Our dedicated team is committed to providing you with the support 
+                and assistance you need. Feel free to reach out to us via the contact form below, and we'll
+                get back to you shortly. Alternatively, you can also contact us directly via email or phone 
+                using the details provided below.
             </p>
         </div>
 
@@ -114,7 +115,6 @@
                     <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                     <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
                     <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
                     <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
                   </div>
                 </div>
@@ -122,15 +122,15 @@
               <div class="col-md-6">
                 <div class="info-box mt-4">
                   <i class="bx bx-envelope"></i>
-                  <h3>Email Me</h3>
-                  <p>contact@example.com</p>
+                  <h3>Email Us</h3>
+                  <p>info@kultuarteiligan.fun</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box mt-4">
                   <i class="bx bx-phone-call"></i>
-                  <h3>Call Me</h3>
-                  <p>+1 5589 55488 55</p>
+                  <h3>Call Us</h3>
+                  <p>0912 345 6789</p>
                 </div>
               </div>
             </div>

@@ -6,8 +6,8 @@
         <div class="col-md-4 mb-4 mb-md-0">
             <h4>About KultuArte</h4>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam aperiam
-                dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi.
+                Where culture thrives and creativity shines. Join us on a journey of artistic discovery 
+                and cultural celebration.
             </p>
             <p class="social">
                 <a href="#"><span class="bi bi-twitter"></span></a>

@@ -60,12 +60,15 @@
                     </ul>
                 </li>
                 <li><a class="nav-link scrollto" href="{{url('contact')}}">Contact Us</a></li>
+                <li><a href="{{ route('login') }}" class="nav-link scrollto link-login">Sign In</a></li>
             </ul>
+
       </nav>
       <!-- .navbar -->
 
       <a href="{{ route('login') }}" class="btn-get-login">Sign In</a>
-      <i class="bi bi-list mobile-nav-toggle"></i>
+      <i class="bx bxs-grid-alt mobile-nav-toggle"></i>
+
     </div>
 </header
 ><!-- End Header -->
@@ -201,7 +204,7 @@
                     <div class="post-entry-1 lg">
                         <a href=""><img src="{{url('guest/assets/img/posts/culture/culture-3.jpg')}}" class="img-fluid"></a>
                         <div class="post-meta"><span class="date">Annual Events</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                        <h2><a href="">11 Work From Home Part-Time Jobs You Can Do Now</a></h2>
+                        <h2><a href="">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</a></h2>
                         <p class="mb-4 d-block">
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero temporibus repudiandae,
                             inventore pariatur numquam cumque possimus exercitationem? Nihil tempore odit ab minus eveniet praesentium,
@@ -210,7 +213,7 @@
                         </p>
 
                         <div class="d-flex align-items-center author">
-                            <div class="photo"><img src="{{url('guest/assets/img/profile/tina.jpg')}}" class="img-fluid"></div>
+                            <div class="photo"><img src="{{url('guest/assets/img/events/authors/author-6.jpg')}}" class="img-fluid"></div>
                                 <div class="name">
                                     <h3 class="m-0 p-0">Cameron Williamson</h3>
                                 </div>
@@ -224,17 +227,17 @@
                                 <div class="post-entry-1">
                                     <a href=""><img src="{{url('guest/assets/img/posts/culture/culture-2.jpg')}}" class="img-fluid"></a>
                                     <div class="post-meta"><span class="date">People</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                                    <h2><a href="">Let’s Get Back to Work, New York</a></h2>
+                                    <h2><a href="">Lorem ipsum dolor sit amet.</a></h2>
                                 </div>
                                 <div class="post-entry-1">
                                     <a href=""><img src="{{url('guest/assets/img/posts/art/art-1.jpg')}}" class="img-fluid"></a>
                                     <div class="post-meta"><span class="date">Public Installation</span> <span class="mx-1">&bullet;</span> <span>Jul 17th '22</span></div>
-                                    <h2><a href="">How to Avoid Distraction and Stay Focused During Video Calls?</a></h2>
+                                    <h2><a href="">Lorem ipsum dolor sit amet consectetur.</a></h2>
                                 </div>
                                 <div class="post-entry-1">
                                     <a href=""><img src="{{url('guest/assets/img/posts/art/art-2.jpg')}}" alt="" class="img-fluid"></a>
                                     <div class="post-meta"><span class="date">Visual Artwork</span> <span class="mx-1">&bullet;</span> <span>Mar 15th '22</span></div>
-                                    <h2><a href="">Why Craigslist Tampa Is One of The Most Interesting Places On the Web?</a></h2>
+                                    <h2><a href="">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</a></h2>
                                 </div>
                             </div>
 
@@ -242,17 +245,17 @@
                                 <div class="post-entry-1">
                                     <a href=""><img src="{{url('guest/assets/img/posts/culture/culture-1.jpg')}}" alt="" class="img-fluid"></a>
                                     <div class="post-meta"><span class="date">Places</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                                    <h2><a href="">6 Easy Steps To Create Your Own Cute Merch For Instagram</a></h2>
+                                    <h2><a href="">Lorem ipsum dolor sit amet consectetur.</a></h2>
                                 </div>
                                 <div class="post-entry-1">
                                     <a href=""><img src="{{url('guest/assets/img/posts/art/art-3.jpg')}}" alt="" class="img-fluid"></a>
                                     <div class="post-meta"><span class="date">Visual Artwork</span> <span class="mx-1">&bullet;</span> <span>Mar 1st '22</span></div>
-                                    <h2><a href="">10 Life-Changing Hacks Every Working Mom Should Know</a></h2>
+                                    <h2><a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a></h2>
                                 </div>
                                 <div class="post-entry-1">
                                     <a href=""><img src="{{url('guest/assets/img/posts/art/art-4.jpg')}}" alt="" class="img-fluid"></a>
                                     <div class="post-meta"><span class="date">People</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                                    <h2><a href="">5 Great Startup Tips for Female Founders</a></h2>
+                                    <h2><a href="">Lorem ipsum dolor sit amet consectetur adipisicing.</a></h2>
                                 </div>
                             </div>
 
@@ -264,35 +267,35 @@
                                         <li>
                                             <a href="">
                                                 <span class="number">1</span>
-                                                <h3>The Best Homemade Masks for Face (keep the Pimples Away)</h3>
+                                                <h3>Lorem ipsum dolor sit amet.</h3>
                                                 <span class="author">Jane Cooper</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="">
                                                 <span class="number">2</span>
-                                                <h3>17 Pictures of Medium Length Hair in Layers That Will Inspire Your New Haircut</h3>
+                                                <h3>Lorem ipsum dolor sit amet consectetur.</h3>
                                                 <span class="author">Wade Warren</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="">
                                                 <span class="number">3</span>
-                                                <h3>13 Amazing Poems from Shel Silverstein with Valuable Life Lessons</h3>
+                                                <h3>Lorem ipsum dolor, sit amet consectetur adipisicing.</h3>
                                                 <span class="author">Esther Howard</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="">
                                                 <span class="number">4</span>
-                                                <h3>9 Half-up/half-down Hairstyles for Long and Medium Hair</h3>
+                                                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
                                                 <span class="author">Cameron Williamson</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="">
                                                 <span class="number">5</span>
-                                                <h3>Life Insurance And Pregnancy: A Working Mom’s Guide</h3>
+                                                <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h3>
                                                 <span class="author">Jenny Wilson</span>
                                             </a>
                                         </li>
@@ -321,7 +324,7 @@
     </section><!-- End Call To Action Section -->
 
     <!-- ======= Map Section ======= -->
-    <section id="contact us">
+    <section id="map">
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
@@ -347,55 +350,71 @@
             <ul class="faq-list">
 
             <li data-aos="fade-up">
-                <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq1">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+                <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq1">What is KultuArte? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
                 <div id="faq1" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                    KultuArte is a dynamic web platform dedicated to showcasing and promoting the rich cultural 
+                    heritage and exceptional talents of Iligan City's local artists. It serves as a digital hub 
+                    where users can explore diverse artistic expressions, engage with cultural events, and connect 
+                    with the vibrant creative community of Iligan City.
                 </p>
                 </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="100">
-                <a data-bs-toggle="collapse" data-bs-target="#faq2" class="collapsed">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+                <a data-bs-toggle="collapse" data-bs-target="#faq2" class="collapsed">How can I use KultuArte? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
                 <div id="faq2" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                    KultuArte is designed to be user-friendly and intuitive. 
+                    Simply visit our website and browse through the various sections to discover upcoming events, 
+                    explore artist profiles, and engage with curated content. You can also create an account to 
+                    personalize your experience, bookmark your favorite artists, and receive updates on the latest 
+                    cultural happenings.
                 </p>
                 </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="200">
-                <a data-bs-toggle="collapse" data-bs-target="#faq3" class="collapsed">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+                <a data-bs-toggle="collapse" data-bs-target="#faq3" class="collapsed">What types of events are featured on KultuArte? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
                 <div id="faq3" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                    KultuArte showcases a wide range of cultural and artistic events, including festivals, 
+                    exhibitions, performances, workshops, and more. From traditional celebrations to 
+                    contemporary showcases, there's something for everyone to enjoy on KultuArte.
                 </p>
                 </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="300">
-                <a data-bs-toggle="collapse" data-bs-target="#faq4" class="collapsed">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+                <a data-bs-toggle="collapse" data-bs-target="#faq4" class="collapsed">How can I get involved with KultuArte as an artist? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
                 <div id="faq4" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                    If you're an artist based in Iligan City, we welcome you to join the KultuArte 
+                    community! You can create a profile to showcase your work, share upcoming events or 
+                    exhibitions, and connect with fellow artists and enthusiasts. KultuArte provides a 
+                    platform for you to reach a wider audience and promote your creative endeavors.
                 </p>
                 </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="400">
-                <a data-bs-toggle="collapse" data-bs-target="#faq5" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+                <a data-bs-toggle="collapse" data-bs-target="#faq5" class="collapsed">Is KultuArte accessible to non-artists? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
                 <div id="faq5" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                    Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+                    Absolutely! KultuArte is designed for anyone who appreciates art and culture. Whether 
+                    you're an avid art lover, a cultural enthusiast, or simply curious about the vibrant 
+                    creative scene in Iligan City, you'll find plenty to explore and enjoy on our platform.
                 </p>
                 </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="500">
-                <a data-bs-toggle="collapse" data-bs-target="#faq6" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+                <a data-bs-toggle="collapse" data-bs-target="#faq6" class="collapsed">How can I stay updated on KultuArte's latest events and features? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
                 <div id="faq6" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                    Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
+                    To stay informed about the latest events, features, and updates on KultuArte, 
+                    we recommend following us on social media. You can also check our website regularly 
+                    for announcements and browse our calendar for upcoming events.
                 </p>
                 </div>
             </li>

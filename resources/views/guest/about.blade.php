@@ -58,15 +58,18 @@
                     </ul>
                 </li>
                 <li><a class="nav-link scrollto" href="{{url('contact')}}">Contact Us</a></li>
+                <li><a href="{{ route('login') }}" class="nav-link scrollto link-login">Sign In</a></li>
             </ul>
+
       </nav>
       <!-- .navbar -->
 
       <a href="{{ route('login') }}" class="btn-get-login">Sign In</a>
-      <i class="bi bi-list mobile-nav-toggle"></i>
+      <i class="bx bxs-grid-alt mobile-nav-toggle"></i>
+      
     </div>
-</header>
-<!-- End Header -->
+</header
+><!-- End Header -->
 
 
 @section('content')
@@ -94,11 +97,23 @@
                     <img src="{{url('guest/assets/img/about/about-1.jpg')}}" class="img-fluid">
                 </a>
                 <div class="ps-md-5 mt-4 mt-md-0">
-                    <div class="post-meta mt-4">About us</div>
+                    <div class="post-meta mt-4">What is KultuArte?</div>
                     <h2 class="mb-4 display-4">KultuArte</h2>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, perspiciatis repellat maxime, adipisci non ipsam at itaque rerum vitae, necessitatibus nulla animi expedita cumque provident inventore? Voluptatum in tempora earum deleniti, culpa odit veniam, ea reiciendis sunt ullam temporibus aut!</p>
-                    <p>Fugit eaque illum blanditiis, quo exercitationem maiores autem laudantium unde excepturi dolores quasi eos vero harum ipsa quam laborum illo aut facere voluptates aliquam adipisci sapiente beatae ullam. Tempora culpa iusto illum accusantium cum hic quisquam dolor placeat officiis eligendi.</p>
+                    <p>
+                        A dynamic and innovative platform passionately dedicated to celebrating 
+                        the rich cultural heritage and exceptional talents of Iligan City's local artists. 
+                        Our mission is rooted in the belief that art serves as a powerful vehicle for 
+                        cultural expression, community connection, and societal transformation.
+                    </p>
+
+                    <p>
+                        At KultuArte, we strive to create a vibrant digital space where the diverse 
+                        artistic expressions of Iligan City are celebrated, promoted, and shared 
+                        with the world. Through our platform, local artists have the opportunity 
+                        to showcase their unique talents, share their compelling stories, 
+                        and connect with a global audience.
+                    </p>
                 </div>
             </div>
 
@@ -107,11 +122,22 @@
                     <img src="{{url('guest/assets/img/about/about-2.jpg')}}" class="img-fluid">
                 </a>
                 <div class="pe-md-5 mt-4 mt-md-0">
-                    <div class="post-meta mt-4">Goal</div>
+                    <div class="post-meta mt-4">Why KultuArte?</div>
                     <h2 class="mb-4 display-4">Goal</h2>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, perspiciatis repellat maxime, adipisci non ipsam at itaque rerum vitae, necessitatibus nulla animi expedita cumque provident inventore? Voluptatum in tempora earum deleniti, culpa odit veniam, ea reiciendis sunt ullam temporibus aut!</p>
-                    <p>Fugit eaque illum blanditiis, quo exercitationem maiores autem laudantium unde excepturi dolores quasi eos vero harum ipsa quam laborum illo aut facere voluptates aliquam adipisci sapiente beatae ullam. Tempora culpa iusto illum accusantium cum hic quisquam dolor placeat officiis eligendi.</p>
+                    <p>
+                        We believe that art has the power to transcend boundaries, ignite dialogue, 
+                        and foster understanding. By highlighting the cultural richness of Iligan City, 
+                        we aim to promote cultural appreciation, foster a sense of pride in our heritage, 
+                        and inspire creativity within our community.
+                    </p>
+                    <p>
+                        Whether you're an art enthusiast, a cultural connoisseur, or simply curious 
+                        about the artistic landscape of Iligan City, KultuArte invites you to join us on 
+                        a journey of exploration, discovery, and celebration. 
+                        Together, let's embrace the beauty of diversity, support local talent, 
+                        and cultivate a thriving artistic community.
+                    </p>
                 </div>
             </div>
         </div>
@@ -123,8 +149,18 @@
             <div class="row justify-content-between latest align-items-lg-center">
                 <div class="col-lg-5 mb-4 mb-lg-0">
                     <h2 class="display-4 mb-4">Latest Events</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, rem eaque vel est asperiores iste pariatur placeat molestias, rerum provident ea maiores debitis eum earum esse quas architecto! Minima, voluptatum! Minus tempora distinctio quo sint est blanditiis voluptate eos. Commodi dolore nesciunt culpa adipisci nemo expedita suscipit autem dolorum rerum?</p>
-                    <p>At magni dolore ullam odio sapiente ipsam, numquam eius minus animi inventore alias quam fugit corrupti error iste laboriosam dolorum culpa doloremque eligendi repellat iusto vel impedit odit cum. Sequi atque molestias nesciunt rem eum pariatur quibusdam deleniti saepe eius maiores porro quam, praesentium ipsa deserunt laboriosam adipisci. Optio, animi!</p>
+                    <p>
+                        Experience the vibrant tapestry of cultural and artistic events that define Iligan City's dynamic spirit. 
+                        From colorful festivals to captivating performances, our city boasts a diverse array of cultural 
+                        celebrations that reflect the rich heritage and creative vitality of our community.
+                    </p>
+                    <p>
+                        Throughout the year, Iligan City comes alive with a myriad of events that showcase the talent, 
+                        passion, and traditions of our local artists and cultural groups. Whether it's the rhythmic beats 
+                        of traditional dances, the melodious tunes of indigenous music, or the captivating exhibitions of 
+                        contemporary art, there's always something exciting happening in our city.
+                    </p>
+                    
                     <p><a href="{{url('/events')}}" class="more">View All Event Posts</a></p>
                 </div>
                 <div class="col-lg-6">
@@ -157,9 +193,9 @@
               <img src="{{url('guest/assets/img/profile/tina.jpg')}}">
               <h4>Christina Mae Gerzon</h4>
               <span>Full Stack Developer</span>
-              <p>
+              <!-- <p>
                 Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui
-              </p>
+              </p> -->
               <div class="social-about">
                 <a href=""><i class="bi bi-twitter"></i></a>
                 <a href=""><i class="bi bi-facebook"></i></a>
@@ -174,9 +210,9 @@
               <img src="{{url('guest/assets/img/profile/nissi.jpg')}}" alt="">
               <h4>Nissi Jea Paglinawan</h4>
               <span>Full Stack Developer</span>
-              <p>
+              <!-- <p>
                 Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
-              </p>
+              </p> -->
               <div class="social-about">
                 <a href=""><i class="bi bi-twitter"></i></a>
                 <a href=""><i class="bi bi-facebook"></i></a>
@@ -191,9 +227,9 @@
               <img src="{{url('guest/assets/img/profile/sophia.jpg')}}">
               <h4>Sophia Jade Esclares</h4>
               <span>Full Stack Developer</span>
-              <p>
+              <!-- <p>
                 Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
-              </p>
+              </p> -->
               <div class="social-about">
                 <a href=""><i class="bi bi-twitter"></i></a>
                 <a href=""><i class="bi bi-facebook"></i></a>

@@ -60,15 +60,18 @@
                     </ul>
                 </li>
                 <li><a class="nav-link scrollto" href="{{url('contact')}}">Contact Us</a></li>
+                <li><a href="{{ route('login') }}" class="nav-link scrollto link-login">Sign In</a></li>
             </ul>
+
       </nav>
       <!-- .navbar -->
 
       <a href="{{ route('login') }}" class="btn-get-login">Sign In</a>
-      <i class="bi bi-list mobile-nav-toggle"></i>
+      <i class="bx bxs-grid-alt mobile-nav-toggle"></i>
+      
     </div>
-</header>
-<!-- End Header -->
+</header
+><!-- End Header -->
 
 @section('content')
 

@@ -1,10 +1,4 @@
-/**
-* Template Name: Regna
-* Updated: Jan 29 2024 with Bootstrap v5.3.2
-* Template URL: https://bootstrapmade.com/regna-bootstrap-onepage-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 (function() {
   "use strict";
 
@@ -116,7 +110,7 @@
    */
   on('click', '.mobile-nav-toggle', function(e) {
     select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
+    this.classList.toggle('bxs-grid-alt')
     this.classList.toggle('bi-x')
   })
 
@@ -141,7 +135,7 @@
       if (navbar.classList.contains('navbar-mobile')) {
         navbar.classList.remove('navbar-mobile')
         let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
+        navbarToggle.classList.toggle('bxs-grid-alt')
         navbarToggle.classList.toggle('bi-x')
       }
       scrollto(this.hash)
