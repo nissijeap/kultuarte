@@ -118,13 +118,6 @@
             </tbody>
         </table>
 
-<<<<<<< HEAD
-        {{ $roles->links() }}
-
-    </div>
-</div>
-@endsection
-=======
         </div>
                 </div>
               </div>
@@ -185,4 +178,3 @@
 
 <!-- Mirrored from www.urbanui.com/melody/template/pages/tables/data-table.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Sep 2018 06:08:41 GMT -->
 </html>
->>>>>>> admin

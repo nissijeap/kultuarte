@@ -114,7 +114,7 @@ class BlogController extends Controller
     }
 
     public function showBlogs($blog){
-        return view ('blogs.show',[
+        return view ('blogs.userShow',[
             'blog' => Blog_post::where('id', '=', $blog)->first(),
         ]);
     }

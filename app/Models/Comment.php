@@ -13,6 +13,7 @@ class Comment extends Model
     use \Askedio\SoftCascade\Traits\SoftCascadeTrait;
     protected $softCascade = ['comment_likes'];
     protected $fillable = [
+        'blog_id',
         'post_id',
         'user_id',
         'comment',

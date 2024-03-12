@@ -89,7 +89,7 @@
                               <td>{{ Illuminate\Support\Str::limit($post->content, 100) }}</td>
                               <td>{{ $post->created_at->format('M d, Y h:i A') }}</td>
                               <td>
-                                <form id="delete-form-{{ $post->id }}" action="{{ route('posts.destroy', $post->id) }}" method="post">
+                                <form id="delete-form-{{ $post->id }}" action="{{ route('destroy', $post->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
 

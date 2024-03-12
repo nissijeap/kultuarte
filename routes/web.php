@@ -122,7 +122,7 @@ Route::get('/posts/exhibits', [PostController::class, 'exhibits'])->name('posts.
 Route::get('/posts/artists', [PostController::class, 'artists'])->name('posts.artists');
 Route::get('/posts/transactions', [PostController::class, 'transactions'])->name('posts.transactions');
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
-Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+//Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 Route::get('/posts/{id}/edit', [PostController::class, 'edit'])->name('posts.edit');
 Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
 Route::put('/posts/{id}', [PostController::class, 'update'])->name('posts.update');

@@ -10,9 +10,9 @@
     height: 500px !important;
 }
 
-.tox-silver-sink{
+/* .tox-silver-sink{
     display: none !important;
-}
+} */
 
 .material-symbols-outlined{
     color: #e15600;
@@ -59,10 +59,6 @@
 .exit{
     position: absolute;
     top: 50%;
-}
-.exit{
-    position: absolute;
-    top: 35%;
     right: 6%;
     color: rgb(167, 164, 164);
     display:none;

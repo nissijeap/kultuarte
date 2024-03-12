@@ -91,8 +91,6 @@ Dropzone.options.dropzone = {
     acceptedFiles: ".jpeg,.jpg,.png,.gif,.mp4,",
     addRemoveLinks: true,
     init: function () {
-        console.log("Dropzone initialized");
-        console.log(Dropzone.forElement("#dropzone").getAcceptedFiles().length); // Check the type of updateShareButtonState
         this.on("addedfile", function (file) {
             setTimeout(function () {
                 updateShareButtonState();

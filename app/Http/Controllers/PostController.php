@@ -72,9 +72,9 @@ class PostController extends Controller
 
     public function postCreate() {
         if (auth()->user()->hasRole('Cultural Organization')){
-            return view('blogs.create');
+            return view('blogs.userCreate');
         } else if (auth()->user()->hasRole('Artist')){
-            return view('posts.create',[
+            return view('posts.userCreate',[
                 'saves' => Saved::where('user_id', '=', auth()->user()->id)->latest()->get(),
                 'views' => Recently_Viewed::where('user_id', '=', auth()->user()->id)->latest()->get(),
             ]);
@@ -110,6 +110,9 @@ class PostController extends Controller
                     // Assign values to the Media instance
                     $newMedia->post_id = $post->id;
                     $newMedia->media = 'medias/' . $mediaName;
+    
+                    // Save the Media instance to the database
+                    $newMedia->save();
                 }
             }
         }

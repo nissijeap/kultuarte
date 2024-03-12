@@ -97,3 +97,17 @@ function storeBlog() {
         });
     }
 }
+
+$(document).ready(function() {
+    // Add a click event handler to the tab links
+    $('.nav-link').on('click', function(e) {
+      e.preventDefault();
+
+      // Hide all tab content
+      $('.tab-pane').removeClass('show active');
+
+      // Show the corresponding tab content based on the clicked tab link
+      var tabId = $(this).attr('href');
+      $(tabId).addClass('show active');
+    });
+  });
